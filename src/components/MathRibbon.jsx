@@ -176,9 +176,11 @@ const TAB3_GROUPS = [
 { label: "⥃̲̅", latex: "\\overset{#?}{\\underset{#?}{\\overset{\\rightarrow}{\\leftarrow}}}", icon: "short-right-over-left-over-under-template-image" }, 
 
   ], moreCols: 11, dropdownClass: "mr-dropdown-script-arrows", moreCellWidth: 34, moreCellGap: 3 },
-  { cols: 2, groupClass: "mr-funcs-spacing-group", cellWidth: 30, cellGap: 1, items: [
-    { label: "→\n⬚", latex: "\\xrightarrow[#?]{}" }, { label: "↔\n⬚", latex: "\\xleftrightarrow[#?]{}" },
-    { label: "⇀\n⬚", latex: "\\overrightharpoon{#0}", icon: "vec-accent-template-image" }, { label: "‾\n⬚", latex: "\\overline{#0}" },
+  { cols: 2, groupClass: "mr-tab3-accent-group", cellWidth: 34, cellGap: 2, items: [
+    { label: "→\n⬚", latex: "\\xrightarrow[#?]{}", icon: "xrightarrow-under-custom-template-image" }, 
+    { label: "↔\n⬚", latex: "\\xleftrightarrow[#?]{}", icon: "xleftrightarrow-under-custom-template-image" },
+    { label: "⇀\n⬚", latex: "\\overrightharpoon{#0}", icon: "overrightharpoon-custom-template-image" }, 
+    { label: "‾\n⬚", latex: "\\overline{#0}", icon: "overline-custom-template-image" },
   ]},
 ];
 
@@ -305,7 +307,7 @@ const TAB6_GROUPS = [
     { label: "â¬š\nâž", latex: "\\overbrace{#0}^{#?}", icon: "overbrace-template-image" },                    // overscript with braces
   ]},
 
-  // Section 6 â€” Big operators with scripts (generic operator placeholder)
+  //  Big operators with scripts (generic operator placeholder)
   { cols: 2, groupClass: "mr-funcs-operators-group", cellWidth: 33, cellGap: 1, items: [
     { label: "â¬š\nâ€\nâ¬š", latex: "\\overset{#?}{\\underset{#?}{#?}}", icon: "operator-limits-both-template-image" },
     { label: "â¬šâŒ", latex: "#?_{#?}^{#?}", icon: "operator-right-sup-sub-template-image" },
@@ -313,7 +315,6 @@ const TAB6_GROUPS = [
     { label: "â¬šâŒâ‚™", latex: "#?_{#?}", icon: "operator-right-sub-template-image" },
   ]},
 
-  // Section 7 â€” Spacing
   { cols: 2, groupClass: "mr-funcs-spacing-group", cellWidth: 30, cellGap: 1, items: [
     { label: "â¬š â¬š", latex: "\\;", icon: "digit-space-template-image" },                                      // digit space
     { label: "â¬šâ¬š", latex: "\\,", icon: "thin-space-template-image" },                                       // thinner space
@@ -734,6 +735,34 @@ function renderIcon(icon) {
       return arrowTemplateIcon("right", true, false);
     case "xrightarrow-both-template-image":
       return arrowTemplateIcon("right", true, true);
+    case "xrightarrow-under-custom-template-image":
+      return (
+        <svg {...svgProps} className="mr-template-svg mr-script-arrow-template-svg" width="42" height="56" viewBox="0 0 42 56" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 10 H25 V6 L35 13 L25 20 V16 H6" fill="#222" />
+          <rect x="12" y="24" width="14" height="26" fill="none" stroke="#148C2E" strokeWidth="3" />
+        </svg>
+      );
+    case "xleftrightarrow-under-custom-template-image":
+      return (
+        <svg {...svgProps} className="mr-template-svg mr-script-arrow-template-svg" width="42" height="56" viewBox="0 0 42 56" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 12 L14 7 V10 H28 V7 L34 12 L28 17 V14 H14 V17 Z" fill="#222" />
+          <rect x="14" y="22" width="14" height="24" fill="none" stroke="#148C2E" strokeWidth="3" />
+        </svg>
+      );
+    case "overline-custom-template-image":
+      return (
+        <svg {...svgProps} className="mr-template-svg mr-script-arrow-template-svg" width="42" height="56" viewBox="0 0 42 56" xmlns="http://www.w3.org/2000/svg">
+          <line x1="10" y1="12" x2="32" y2="12" stroke="#222" strokeWidth="3.5" strokeLinecap="square" />
+          <rect x="14" y="22" width="14" height="24" fill="none" stroke="#148C2E" strokeWidth="3" />
+        </svg>
+      );
+    case "overrightharpoon-custom-template-image":
+      return (
+        <svg {...svgProps} className="mr-template-svg mr-script-arrow-template-svg" width="42" height="56" viewBox="0 0 42 56" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 12 H25 V8 L35 14 H8 Z" fill="#222" />
+          <rect x="14" y="22" width="14" height="24" fill="none" stroke="#148C2E" strokeWidth="3" />
+        </svg>
+      );
     case "xleftarrow-top-template-image":
       return arrowTemplateIcon("left", false, true);
     case "xleftarrow-bottom-template-image":

@@ -202,6 +202,31 @@
   max-height: 28px;
 }
 
+.mr-tab3-accent-group {
+  align-items: center;
+}
+
+.mr-tab3-accent-group .mr-grid {
+  grid-auto-rows: 34px;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.mr-tab3-accent-group .mr-btn {
+  width: var(--mr-cell, 34px);
+  height: var(--mr-cell, 34px);
+}
+
+.mr-tab3-accent-group .mr-script-arrow-template-svg {
+  width: 28px;
+  height: 34px;
+  max-width: 28px;
+  max-height: 34px;
+  object-fit: contain;
+}
+
 .mr-matrix-template-svg {
   max-width: 28px;
   max-height: 31px;
