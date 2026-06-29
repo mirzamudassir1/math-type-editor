@@ -235,12 +235,12 @@ const TAB4_GROUPS = [
 const TAB5_GROUPS = [
   { type: "inline-matrix-picker" },
   { cols: 2, items: [
-    { label: "â–¡\nâ–¡\nâ–¡", latex: "\\begin{matrix} #? \\\\ #? \\\\ #? \\end{matrix}", icon: "matrix-vertical-plain-template-image" },
-    { label: "[â–¡\nâ–¡]", latex: "\\left[\\vphantom{\\begin{array}{c}X\\\\[2pt]X\\end{array}}\\begin{matrix} #? \\\\[-1pt] #? \\end{matrix}\\right]", icon: "matrix-vertical-square-template-image" },
-    { label: "(â–¡\nâ–¡)", latex: "\\left(\\vphantom{\\begin{array}{c}X\\\\[2pt]X\\end{array}}\\begin{matrix} #? \\\\[-1pt] #? \\end{matrix}\\right)", icon: "matrix-vertical-round-template-image" },
-    { label: "â–¡ â–¡ â–¡", latex: "\\begin{matrix} #? \\, #? \\, #? \\end{matrix}", icon: "matrix-horizontal-plain-template-image" },
-    { label: "[â–¡ & â–¡]", latex: "\\left[\\begin{matrix} #? \\, #? \\end{matrix}\\right]", icon: "matrix-horizontal-square-template-image" },
-    { label: "(â–¡ & â–¡)", latex: "\\left(\\begin{matrix} #? \\, #? \\end{matrix}\\right)", icon: "matrix-horizontal-round-template-image" },
+    { label: "□\n□\n□", latex: "\\begin{matrix} #? \\\\ #? \\\\ #? \\end{matrix}", icon: "matrix-vertical-plain-template-image" },
+    { label: "[□\n□]", latex: "\\left[\\vphantom{\\begin{array}{c}X\\\\[2pt]X\\end{array}}\\begin{matrix} #? \\\\[-1pt] #? \\end{matrix}\\right]", icon: "matrix-vertical-square-template-image" },
+    { label: "(□\n□)", latex: "\\left(\\vphantom{\\begin{array}{c}X\\\\[2pt]X\\end{array}}\\begin{matrix} #? \\\\[-1pt] #? \\end{matrix}\\right)", icon: "matrix-vertical-round-template-image" },
+    { label: "□ □ □", latex: "\\begin{matrix} #? \\, #? \\, #? \\end{matrix}", icon: "matrix-horizontal-plain-template-image" },
+    { label: "[□ & □]", latex: "\\left[\\begin{matrix} #? \\, #? \\end{matrix}\\right]", icon: "matrix-horizontal-square-template-image" },
+    { label: "(□ & □)", latex: "\\left(\\begin{matrix} #? \\, #? \\end{matrix}\\right)", icon: "matrix-horizontal-round-template-image" },
   ]},
   { cols: 2, items: [
     { label: "{", latex: "\\left\\{\\begin{matrix} \\rule[-0.35em]{0pt}{1.9em}#? \\\\[4pt] \\rule[-0.35em]{0pt}{1.9em}#? \\end{matrix}\\right.", icon: "cases-left-template-image" },
@@ -249,21 +249,21 @@ const TAB5_GROUPS = [
     { label: "=", latex: "\\begin{aligned} #? &= #? \\\\ #? &= #? \\end{aligned}", icon: "aligned-equations-template-image" },
   ]},
   { cols: 2, items: [
-    { label: "â‹®", latex: "\\vdots" },
-    { label: "â‹°", latex: "â‹°" },
-    { label: "â€¦", latex: "\\ldots" },
-    { label: "â‹±", latex: "\\ddots" },
+    { label: "⋮", latex: "\\vdots" },
+    { label: "⋰", latex: "⋰" },
+    { label: "…", latex: "\\ldots" },
+    { label: "⋱", latex: "\\ddots" },
   ]},
   { cols: 1, items: [
     { label: "+", latex: "\\frac{\\begin{array}{r}#?\\\\+\\,#?\\end{array}}{\\quad#?}", icon: "addition-array-template-image" },
-    { label: "âŸŒ", latex: "#?\\, ) \\!\\! \\overset{\\displaystyle #?}{\\overline{\\vphantom{1}\\;\\;#?\\;}}", icon: "long-division-template-image" },
+    { label: "⟌", latex: "#?\\, ) \\!\\! \\overset{\\displaystyle #?}{\\overline{\\vphantom{1}\\;\\;#?\\;}}", icon: "long-division-template-image" },
   ], more: [
     { label: " ", latex: "\\frac{\\begin{array}{r}#?\\\\ \\,#?\\end{array}}{\\;#?}", icon: "blank-array-template-image" },
     { label: "-", latex: "\\frac{\\begin{array}{r}#?\\\\-\\,#?\\end{array}}{\\quad#?}", icon: "subtraction-array-template-image" },
     { label: "*", latex: "\\frac{\\begin{array}{r}#?\\\\*\\,#?\\end{array}}{\\quad#?}", icon: "multiplication-array-template-image" },
-    { label: "Ã·", latex: "\\begin{array}{r@{}l} #?\\, & \\begin{array}{|@{}l} \\underline{\\;#?\\;\\,} \\end{array} \\\\ & \\; #? \\end{array}", icon: "division-array-template-image" },
-    { label: "Ã·", latex: "\\begin{array}{r@{}l} #?\\, & \\begin{array}{|@{}l} \\underline{\\;#?\\;\\,} \\end{array} \\\\ #?\\, & \\; #? \\end{array}", icon: "division-four-box-template-image" },
-    { label: "âŸŒ", latex: "#?\\, ) \\!\\!\\!\\!\\! \\begin{array}\\overset{\\displaystyle #?}{\\overline{\\vphantom{1}\\;\\;#?\\;}} \\\\ \\;\\;#?\\; \\end{array}", icon: "long-division-stacked-template-image" },
+    { label: "÷", latex: "\\begin{array}{r@{}l} #?\\, & \\begin{array}{|@{}l} \\underline{\\;#?\\;\\,} \\end{array} \\\\ & \\; #? \\end{array}", icon: "division-array-template-image" },
+    { label: "÷", latex: "\\begin{array}{r@{}l} #?\\, & \\begin{array}{|@{}l} \\underline{\\;#?\\;\\,} \\end{array} \\\\ #?\\, & \\; #? \\end{array}", icon: "division-four-box-template-image" },
+    { label: "⟌", latex: "#?\\, ) \\!\\!\\!\\!\\! \\begin{array}\\overset{\\displaystyle #?}{\\overline{\\vphantom{1}\\;\\;#?\\;}} \\\\ \\;\\;#?\\; \\end{array}", icon: "long-division-stacked-template-image" },
   ], moreCols: 3 },
 ];
 // eslint-disable-next-line no-unused-vars
@@ -380,77 +380,77 @@ const TAB6_GROUPS = [
 const TAB8_GROUPS = [
   // Section 1: Sigma (Sum)
   { cols: 2, items: [
-    { label: "â¬š\nÎ£\nâ¬š", latex: "\\sum\\limits_{#0}^{#?}", icon: "sum-limits-both-template-image" },   // over and under script
-    { label: "Î£â¬š\n â¬š", latex: "\\sum\\nolimits_{#0}^{#?}", icon: "sum-right-sup-sub-template-image" },  // subscript and superscript
-    { label: "Î£\nâ¬š", latex: "\\sum\\limits_{#0}", icon: "sum-limits-under-template-image" },           // under script only
-    { label: "Î£â¬š", latex: "\\sum\\nolimits_{#0}", icon: "sum-right-sub-template-image" },           // subscript only
+    { label: "⬚\nΣ\n⬚", latex: "\\sum\\limits_{#0}^{#?}", icon: "sum-limits-both-template-image" },   // over and under script
+    { label: "Σ⬚\n ⬚", latex: "\\sum\\nolimits_{#0}^{#?}", icon: "sum-right-sup-sub-template-image" },  // subscript and superscript
+    { label: "Σ\n⬚", latex: "\\sum\\limits_{#0}", icon: "sum-limits-under-template-image" },           // under script only
+    { label: "Σ⬚", latex: "\\sum\\nolimits_{#0}", icon: "sum-right-sub-template-image" },           // subscript only
   ]},
   // Section 2: Pi (Product)
   { cols: 2, items: [
-    { label: "â¬š\nÎ \nâ¬š", latex: "\\prod\\limits_{#0}^{#?}", icon: "prod-limits-both-template-image" },   // over and under script
-    { label: "Î â¬š\n â¬š", latex: "\\prod\\nolimits_{#0}^{#?}", icon: "prod-right-sup-sub-template-image" },  // subscript and superscript
-    { label: "Î \nâ¬š", latex: "\\prod\\limits_{#0}", icon: "prod-limits-under-template-image" },           // under script only
-    { label: "Î â¬š", latex: "\\prod\\nolimits_{#0}", icon: "prod-right-sub-template-image" },           // subscript only
+    { label: "⬚\nΠ\n⬚", latex: "\\prod\\limits_{#0}^{#?}", icon: "prod-limits-both-template-image" },   // over and under script
+    { label: "Π⬚\n ⬚", latex: "\\prod\\nolimits_{#0}^{#?}", icon: "prod-right-sup-sub-template-image" },  // subscript and superscript
+    { label: "Π\n⬚", latex: "\\prod\\limits_{#0}", icon: "prod-limits-under-template-image" },           // under script only
+    { label: "Π⬚", latex: "\\prod\\nolimits_{#0}", icon: "prod-right-sub-template-image" },           // subscript only
   ]},
   // Section 3: generic big operator (editable symbol + scripts)
   { cols: 2, items: [
-    { label: "â¬š\nâ¬š\nâ¬š", latex: "\\mathop{#0}\\limits_{#?}^{#?}", icon: "mathop-limits-both-template-image" },   // over and under script
-    { label: "â¬šâ¬š\n â¬š", latex: "\\mathop{#0}\\nolimits_{#?}^{#?}", icon: "mathop-right-sup-sub-template-image" },  // subscript and superscript
-    { label: "â¬š\nâ¬š", latex: "\\mathop{#0}\\limits_{#?}", icon: "mathop-limits-under-template-image" },           // under script only
-    { label: "â¬šâ¬š", latex: "\\mathop{#0}\\nolimits_{#?}", icon: "mathop-right-sub-template-image" },           // subscript only
+    { label: "⬚\n⬚\n⬚", latex: "\\mathop{#0}\\limits_{#?}^{#?}", icon: "mathop-limits-both-template-image" },   // over and under script
+    { label: "⬚⬚\n ⬚", latex: "\\mathop{#0}\\nolimits_{#?}^{#?}", icon: "mathop-right-sup-sub-template-image" },  // subscript and superscript
+    { label: "⬚\n⬚", latex: "\\mathop{#0}\\limits_{#?}", icon: "mathop-limits-under-template-image" },           // under script only
+    { label: "⬚⬚", latex: "\\mathop{#0}\\nolimits_{#?}", icon: "mathop-right-sub-template-image" },           // subscript only
   ]},
   // Section 4: set/big operators - plain symbols
   { cols: 1, items: [
-    { label: "âˆ©", latex: "\\cap" },
-    { label: "âˆª", latex: "\\cup" },
+    { label: "∩", latex: "\\cap" },
+    { label: "∪", latex: "\\cup" },
   ], more: [
-    { label: "âŠ“", latex: "\\sqcap" },
-    { label: "Î ", latex: "\\prod" },
-    { label: "Î£", latex: "\\sum" },
-    { label: "âŠ”", latex: "\\sqcup" },
-    { label: "âˆ", latex: "\\coprod" },
+    { label: "⊓", latex: "\\sqcap" },
+    { label: "Π", latex: "\\prod" },
+    { label: "Σ", latex: "\\sum" },
+    { label: "⊔", latex: "\\sqcup" },
+    { label: "∐", latex: "\\coprod" },
   ], moreCols: 3 },
 ];
 const TAB9_GROUPS = [
   // Section 1: Integral basics
   { cols: 2, items: [
-    { label: "âˆ«â¬š\nâ¬š", latex: "\\int_{#0}^{#?}", icon: "integral-bounds-template-image" },
-    { label: "âˆ«â¬š\nâ¬šâ¬šdâ¬š", latex: "\\int_{#0}^{#?}#?\\,d#?", icon: "integral-bounds-differential-template-image" },
-    { label: "âˆ«\nâ¬š", latex: "\\int_{#0}", icon: "integral-lower-bound-template-image" },
-    { label: "âˆ«\nâ¬šâ¬šdâ¬š", latex: "\\int_{#0}#?\\,d#?", icon: "integral-lower-bound-differential-template-image" },
+    { label: "∫⬚\n⬚", latex: "\\int_{#0}^{#?}", icon: "integral-bounds-template-image" },
+    { label: "∫⬚\n⬚⬚d⬚", latex: "\\int_{#0}^{#?}#?\\,d#?", icon: "integral-bounds-differential-template-image" },
+    { label: "∫\n⬚", latex: "\\int_{#0}", icon: "integral-lower-bound-template-image" },
+    { label: "∫\n⬚⬚d⬚", latex: "\\int_{#0}#?\\,d#?", icon: "integral-lower-bound-differential-template-image" },
   ]},
 
   // Section 2: Derivatives
   { cols: 2, items: [
     { label: "d", latex: "d" },
-    { label: "dâ¬š\ndâ¬š", latex: "\\frac{d#0}{d#?}" },
-    { label: "âˆ‚", latex: "\\partial" },
-    { label: "âˆ‚â¬š\nâˆ‚â¬š", latex: "\\frac{\\partial#0}{\\partial#?}" },
+    { label: "d⬚\nd⬚", latex: "\\frac{d#0}{d#?}" },
+    { label: "∂", latex: "\\partial" },
+    { label: "∂⬚\n∂⬚", latex: "\\frac{\\partial#0}{\\partial#?}" },
   ]},
 
   // Section 3: Limits
   { cols: 1, items: [
-    { label: "lim\nâ¬šâ†’âˆž", latex: "\\lim_{#0 \\to \\infty}" },
-    { label: "lim\nâ¬š", latex: "\\lim_{#0}" },
+    { label: "lim\n⬚→∞", latex: "\\lim_{#0 \\to \\infty}" },
+    { label: "lim\n⬚", latex: "\\lim_{#0}" },
   ]},
 
   // Section 4: Vector calculus
   { cols: 2, items: [
-    { label: "âˆ‡Ã—â¬š", latex: "\\nabla \\times #0" },
-    { label: "âˆ‡â¬š", latex: "\\nabla #0" },
-    { label: "âˆ‡Â·â¬š", latex: "\\nabla \\cdot #0" },
-    { label: "Î”â¬š", latex: "\\Delta #0" },
+    { label: "∇×⬚", latex: "\\nabla \\times #0" },
+    { label: "∇⬚", latex: "\\nabla #0" },
+    { label: "∇·⬚", latex: "\\nabla \\cdot #0" },
+    { label: "Δ⬚", latex: "\\Delta #0" },
   ]},
 
   // Section 5: Integral symbol variants
   { cols: 2, items: [
-    { label: "âˆ«", latex: "\\int" },
-    { label: "âˆ¬", latex: "\\iint" },
-    { label: "âˆ®", latex: "\\oint" },
-    { label: "âˆ¯", latex: "\\oiint" },
+    { label: "∫", latex: "\\int" },
+    { label: "∬", latex: "\\iint" },
+    { label: "∮", latex: "\\oint" },
+    { label: "∯", latex: "\\oiint" },
   ], more: [
-    { label: "âˆ°", latex: "\\oiiint" },
-    { label: "âˆ­", latex: "\\iiint" },
+    { label: "∰", latex: "\\oiiint" },
+    { label: "∭", latex: "\\iiint" },
   ], moreCols: 2 },
 
   // Section 6: Trig / log functions
@@ -459,11 +459,11 @@ const TAB9_GROUPS = [
     { label: "cos", latex: "\\cos(#?)" },
     { label: "tan", latex: "\\tan(#?)" },
     { label: "log", latex: "\\log(#?)" },
-    { label: "logâ¬š", latex: "\\log_{#0}(#?)" },
+    { label: "log⬚", latex: "\\log_{#0}(#?)" },
     { label: "ln", latex: "\\ln(#?)" },
   ], more: [
     { label: "csc", latex: "\\csc(#?)" }, { label: "sec", latex: "\\sec(#?)" }, { label: "cot", latex: "\\cot(#?)" },
-    { label: "sinâ»Â¹", latex: "\\sin^{-1}(#?)" }, { label: "cosâ»Â¹", latex: "\\cos^{-1}(#?)" }, { label: "tanâ»Â¹", latex: "\\tan^{-1}(#?)" },
+    { label: "sin⁻¹", latex: "\\sin^{-1}(#?)" }, { label: "cos⁻¹", latex: "\\cos^{-1}(#?)" }, { label: "tan⁻¹", latex: "\\tan^{-1}(#?)" },
   ], moreCols: 3 },
 ];
 
@@ -1561,7 +1561,7 @@ function renderIcon(icon) {
     case "sum-limits-both-template-image":
       return (
         <svg {...svgProps} width="60" height="80" viewBox="0 0 60 80">
-          <text x="10" y="52" fontSize="52" fontFamily="Times New Roman">âˆ‘</text>
+          <text x="10" y="52" fontSize="52" fontFamily="Times New Roman">∑</text>
           <rect x="25" y="0" width="10" height="10" fill="none" stroke="#66BB6A" strokeWidth="2" />
           <rect x="25" y="68" width="10" height="10" fill="none" stroke="#66BB6A" strokeWidth="2" />
         </svg>
@@ -1569,28 +1569,28 @@ function renderIcon(icon) {
     case "sum-right-sup-sub-template-image":
       return (
         <svg {...svgProps} width="60" height="80" viewBox="0 0 60 80">
-          <text x="10" y="52" fontSize="52" fontFamily="Times New Roman">âˆ‘</text>
+          <text x="10" y="52" fontSize="52" fontFamily="Times New Roman">∑</text>
           <rect x="25" y="68" width="10" height="10" fill="none" stroke="#66BB6A" strokeWidth="2" />
         </svg>
       );
     case "sum-limits-under-template-image":
       return (
         <svg {...svgProps} width="60" height="80" viewBox="0 0 60 80">
-          <text x="10" y="52" fontSize="52" fontFamily="Times New Roman">âˆ‘</text>
+          <text x="10" y="52" fontSize="52" fontFamily="Times New Roman">∑</text>
           <rect x="25" y="68" width="10" height="10" fill="none" stroke="#66BB6A" strokeWidth="2" />
         </svg>
       );
     case "sum-right-sub-template-image":
   return (
     <svg {...svgProps} width="60" height="80" viewBox="0 0 60 80">
-      <text x="10" y="52" fontSize="52" fontFamily="Times New Roman">âˆ‘</text>
+      <text x="10" y="52" fontSize="52" fontFamily="Times New Roman">∑</text>
       <rect x="42" y="58" width="10" height="10" fill="none" stroke="#66BB6A" strokeWidth="2" />
     </svg>
   );
     case "prod-limits-both-template-image":
       return (
         <svg {...svgProps} width="70" height="90" viewBox="0 0 70 90">
-          <text x="14" y="58" fontSize="56" fontFamily="Times New Roman">âˆ</text>
+          <text x="14" y="58" fontSize="56" fontFamily="Times New Roman">∏</text>
           <rect x="30" y="2" width="10" height="12" fill="none" stroke="#66BB6A" strokeWidth="2" />
           <rect x="30" y="74" width="10" height="12" fill="none" stroke="#66BB6A" strokeWidth="2" />
         </svg>
@@ -1598,7 +1598,7 @@ function renderIcon(icon) {
     case "prod-right-sup-sub-template-image":
       return (
         <svg {...svgProps} width="90" height="90" viewBox="0 0 90 90">
-          <text x="10" y="58" fontSize="56" fontFamily="Times New Roman">âˆ</text>
+          <text x="10" y="58" fontSize="56" fontFamily="Times New Roman">∏</text>
           <rect x="62" y="8" width="14" height="14" fill="none" stroke="#66BB6A" strokeWidth="2" />
           <rect x="62" y="58" width="14" height="14" fill="none" stroke="#66BB6A" strokeWidth="2" />
         </svg>
@@ -1606,14 +1606,14 @@ function renderIcon(icon) {
     case "prod-limits-under-template-image":
       return (
         <svg {...svgProps} width="70" height="90" viewBox="0 0 70 90">
-          <text x="14" y="58" fontSize="56" fontFamily="Times New Roman">âˆ</text>
+          <text x="14" y="58" fontSize="56" fontFamily="Times New Roman">∏</text>
           <rect x="30" y="74" width="10" height="12" fill="none" stroke="#66BB6A" strokeWidth="2" />
         </svg>
       );
     case "prod-right-sub-template-image":
       return (
         <svg {...svgProps} width="90" height="90" viewBox="0 0 90 90">
-          <text x="10" y="58" fontSize="56" fontFamily="Times New Roman">âˆ</text>
+          <text x="10" y="58" fontSize="56" fontFamily="Times New Roman">∏</text>
           <rect x="62" y="58" width="14" height="14" fill="none" stroke="#66BB6A" strokeWidth="2" />
         </svg>
       );
@@ -1650,7 +1650,7 @@ function renderIcon(icon) {
     case "integral-bounds-template-image":
       return (
         <svg {...svgProps} width="90" height="120" viewBox="0 0 90 120">
-          <text x="8" y="88" fontSize="90" fontFamily="Times New Roman">âˆ«</text>
+          <text x="8" y="88" fontSize="90" fontFamily="Times New Roman">∫</text>
           <rect x="58" y="6" width="14" height="22" fill="none" stroke="#6BA96B" strokeWidth="3" />
           <rect x="20" y="96" width="14" height="22" fill="none" stroke="#6BA96B" strokeWidth="3" />
         </svg>
@@ -1658,7 +1658,7 @@ function renderIcon(icon) {
     case "integral-bounds-differential-template-image":
       return (
         <svg {...svgProps} width="190" height="120" viewBox="0 0 190 120">
-          <text x="8" y="88" fontSize="90" fontFamily="Times New Roman">âˆ«</text>
+          <text x="8" y="88" fontSize="90" fontFamily="Times New Roman">∫</text>
           <rect x="58" y="6" width="14" height="22" fill="none" stroke="#6BA96B" strokeWidth="3" />
           <rect x="20" y="96" width="14" height="22" fill="none" stroke="#6BA96B" strokeWidth="3" />
           <rect x="105" y="40" width="22" height="32" fill="none" stroke="#008000" strokeWidth="4" />
@@ -1669,14 +1669,14 @@ function renderIcon(icon) {
     case "integral-lower-bound-template-image":
       return (
         <svg {...svgProps} width="90" height="120" viewBox="0 0 90 120">
-          <text x="8" y="88" fontSize="90" fontFamily="Times New Roman">âˆ«</text>
+          <text x="8" y="88" fontSize="90" fontFamily="Times New Roman">∫</text>
           <rect x="20" y="96" width="14" height="22" fill="none" stroke="#6BA96B" strokeWidth="3" />
         </svg>
       );
     case "integral-lower-bound-differential-template-image":
       return (
         <svg {...svgProps} width="190" height="120" viewBox="0 0 190 120">
-          <text x="8" y="88" fontSize="90" fontFamily="Times New Roman">âˆ«</text>
+          <text x="8" y="88" fontSize="90" fontFamily="Times New Roman">∫</text>
           <rect x="20" y="96" width="14" height="22" fill="none" stroke="#6BA96B" strokeWidth="3" />
           <rect x="105" y="40" width="22" height="32" fill="none" stroke="#008000" strokeWidth="4" />
           <text x="137" y="73" fontSize="42" fontFamily="Times New Roman">d</text>
@@ -1786,8 +1786,8 @@ function InlineMatrixPicker({ onInsert }) {
             <span className="mr-matrix-inline-label">{lbl}</span>
             <span className="mr-matrix-inline-val">{size[dim]}</span>
             <span className="mr-matrix-inline-steppers">
-              <button type="button" onMouseDown={e => e.preventDefault()} onClick={() => changeSize(dim, 1)}>â–²</button>
-              <button type="button" onMouseDown={e => e.preventDefault()} onClick={() => changeSize(dim, -1)}>â–¼</button>
+              <button type="button" aria-label={`Increase ${lbl.toLowerCase()}`} title={`Increase ${lbl.toLowerCase()}`} onMouseDown={e => e.preventDefault()} onClick={() => changeSize(dim, 1)}>▲</button>
+              <button type="button" aria-label={`Decrease ${lbl.toLowerCase()}`} title={`Decrease ${lbl.toLowerCase()}`} onMouseDown={e => e.preventDefault()} onClick={() => changeSize(dim, -1)}>▼</button>
             </span>
           </div>
         ))}
@@ -2015,9 +2015,11 @@ export default function MathRibbon({ onInsert, onCommand }) {
                 <button
                   type="button"
                   className={`mr-more-arrow${openGroup === gi ? " open" : ""}`}
+                  aria-label={openGroup === gi ? "Close more symbols" : "Show more symbols"}
+                  title={openGroup === gi ? "Close more symbols" : "Show more symbols"}
                   onMouseDown={e => { e.preventDefault(); openDropdown(gi, e); }}
                 >
-                  â–¸
+                  {openGroup === gi ? "▴" : "▾"}
                 </button>
               )}
             </div>
