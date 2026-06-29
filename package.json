@@ -2,14 +2,19 @@
   "name": "quizpro",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^13.5.0",
+    "lucide-react": "^1.17.0",
+    "mathlive": "^0.110.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
+    "react-router-dom": "^7.15.1",
     "react-scripts": "5.0.1",
+    "recharts": "^3.8.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -35,5 +40,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:5000"
 }
