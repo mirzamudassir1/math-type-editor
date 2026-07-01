@@ -9,20 +9,20 @@ const getArrowFontSize = (value) => {
 
 const TAB1_GROUPS = [
   { cols: 2, groupClass: "mr-cases-group", cellWidth: 40, cellGap: 1, items: [
-    { label: "⬚_⬚", latex: "\\frac{#0}{#?}", icon: "fraction-template-image" },
-    { label: "√⬚", latex: "\\sqrt{#0}", icon: "sqrt-template-image" },
-    { label: "⬚⁄⬚", latex: "#0/#?", icon: "slash-fraction-template-image" },
-    { label: "ⁿ√⬚", latex: "\\sqrt[#?\\;]{#0}", icon: "nth-root-template-image" },
+    { label: "⬚_⬚", latex: "\\frac{#0}{#?}", icon: "fraction-template-image",title: "Insert Fraction" },
+    { label: "√⬚", latex: "\\sqrt{#0}", icon: "sqrt-template-image",title:"Square root" },
+    { label: "⬚⁄⬚", latex: "#0/#?", icon: "slash-fraction-template-image", title:"bevelled fraction" },
+    { label: "ⁿ√⬚", latex: "\\sqrt[#?\\;]{#0}", icon: "nth-root-template-image",title:"Root" },
   ]},
   { cols: 1, groupClass: "mr-cases-group", cellWidth: 40, cellGap: 1, items: [
-    { label: "⬚ⁿ", latex: "#0^{#?}", icon: "superscript-template-image" },
-    { label: "⬚ₙ", latex: "#0_{#?}", icon: "subscript-template-image" },
+    { label: "⬚ⁿ", latex: "#0^{#?}", icon: "superscript-template-image",title:"Superscript" },
+    { label: "⬚ₙ", latex: "#0_{#?}", icon: "subscript-template-image",title:"Underscript" },
   ]},
   { cols: 2, groupClass: "mr-cases-group", cellWidth: 40, cellGap: 1, items: [
-    { label: "(⬚)", latex: "\\left(#0\\right)", icon: "paren-delimiter-template-image" },
-    { label: "|⬚|", latex: "\\left|#0\\right|", icon: "bar-delimiter-template-image" },
-    { label: "[⬚]", latex: "\\left[#0\\right]", icon: "bracket-delimiter-template-image" },
-    { label: "{⬚}", latex: "\\left\\{#0\\right\\}", icon: "brace-delimiter-template-image" },
+    { label: "(⬚)", latex: "\\left(#0\\right)", icon: "paren-delimiter-template-image",title:"parenthesis" },
+    { label: "|⬚|", latex: "\\left|#0\\right|", icon: "bar-delimiter-template-image",title:"Vertical bars" },
+    { label: "[⬚]", latex: "\\left[#0\\right]", icon: "bracket-delimiter-template-image",title:"Square Bracket" },
+    { label: "{⬚}", latex: "\\left\\{#0\\right\\}", icon: "brace-delimiter-template-image",title:"Curly Bracket" },
   ]},
   { cols: 2, items: [
     { label: "+", latex: "+" }, { label: "∕", latex: "/" },
@@ -30,8 +30,8 @@ const TAB1_GROUPS = [
     { label: "−", latex: "-" }, { label: "÷", latex: "\\div" },
   ]},
   { cols: 2, items: [
-    { label: "≥", latex: "\\geq" }, { label: "≤", latex: "\\leq" },
-    { label: "∈", latex: "\\in" }, { label: "⊂", latex: "\\subset" },
+    { label: "≥", latex: "\\geq" }, { label: "≤", latex: "\\leq",title:"Grater than or equal to" },
+    { label: "∈", latex: "\\in" }, { label: "⊂", latex: "\\subset",title:"belongs to" },
     { label: "∪", latex: "\\cup" }, { label: "∩", latex: "\\cap" },
   ]},
   { cols: 1, items: [
@@ -57,7 +57,7 @@ const TAB1_GROUPS = [
 
 const TAB2_GROUPS = [
   { cols: 1, groupClass: "mr-diagonal-cross-single-group", cellWidth: 22, items: [
-    { label: "⬚\n╱", latex: "\\enclose{updiagonalstrike}{#0}", icon: "updiagonalstrike-enclosure-template-image" },
+    { label: "⬚\n╱", latex: "\\enclose{updiagonalstrike}{#0}", icon: "updiagonalstrike-enclosure-template-image",title:"Negate operator" },
   ] },
   { cols: 3, cellWidth: 23, cellGap: 0, items: [
     { label: "+", latex: "+" }, { label: "×", latex: "\\times" }, { label: "⋅", latex: "\\cdot" },
@@ -128,59 +128,96 @@ const TAB2_GROUPS = [
 
 const TAB3_GROUPS = [
   { cols: 3, items: [
-    { label: "←", latex: "\\leftarrow" }, { label: "→", latex: "\\rightarrow" }, { label: "↔", latex: "\\leftrightarrow" },
-    { label: "⇐", latex: "\\Leftarrow" }, { label: "⇒", latex: "\\Rightarrow" }, { label: "⇔", latex: "\\Leftrightarrow" },
+    { label: "←", latex: "\\leftarrow",title:"Left Arrow" }, { label: "→", latex: "\\rightarrow",title:"Right Arrow" }, { label: "↔", latex: "\\leftrightarrow",title:"LeftRight Arrow" },
+    { label: "⇐", latex: "\\Leftarrow",title:"Left Double Arrow" }, { label: "⇒", latex: "\\Rightarrow",title:"Right Double Arrow" }, { label: "⇔", latex: "\\Leftrightarrow",title:"LeftRight Double Arrow"},
+    { label: "↤", latex: "\\mapsfrom", title: "Leftwards Arrow From Bar" },
+    { label: "↦", latex: "\\mapsto", title: "Rightwards Arrow From Bar" },
   ], more: [
-    { label: "↗", latex: "\\nearrow" }, { label: "↘", latex: "\\searrow" }, { label: "↙", latex: "\\swarrow" }, { label: "↖", latex: "\\nwarrow" }, { label: "↩", latex: "\\hookleftarrow" }, { label: "↪", latex: "\\hookrightarrow" }, { label: "↼", latex: "\\leftharpoonup" }, { label: "⇀", latex: "\\rightharpoonup" }, { label: "↑", latex: "\\uparrow" },
-    { label: "⇊", latex: "\\downdownarrows" }, { label: "⇇", latex: "\\leftleftarrows" }, { label: "⇉", latex: "\\rightrightarrows" }, { label: "⇄", latex: "\\rightleftarrows" }, { label: "⇌", latex: "\\rightleftharpoons" }, { label: "↽", latex: "\\leftharpoondown" }, { label: "⇁", latex: "\\rightharpoondown" }, { label: "⇆", latex: "\\leftrightarrows" }, { label: "↓", latex: "\\downarrow" },
-    { label: "↿", latex: "\\upharpoonleft" }, { label: "⇃", latex: "\\downharpoonright" }, { label: "⇄", latex: "\\rightleftarrows" }, { label: "⇆", latex: "\\leftrightarrows" }, { label: "↕", latex: "\\updownarrow" }, { label: "⇕", latex: "\\Updownarrow" }, { label: "↵", latex: "\\hookleftarrow" }, null, null,
-  ], moreCols: 9 },
+   { label: "↗", latex: "\\nearrow", title: "North East Arrow" },
+{ label: "↘", latex: "\\searrow", title: "South East Arrow" },
+{ label: "↙", latex: "\\swarrow", title: "South West Arrow" },
+{ label: "↖", latex: "\\nwarrow", title: "North West Arrow" },
+{ label: "↩", latex: "\\hookleftarrow", title: "Left Hook Arrow" },
+{ label: "↪", latex: "\\hookrightarrow", title: "Right Hook Arrow" },
+{ label: "↼", latex: "\\leftharpoonup", title: "Left Harpoon Up" },
+{ label: "⇀", latex: "\\rightharpoonup", title: "Right Harpoon Up" },
+{ label: "↑", latex: "\\uparrow", title: "Up Arrow" },
+
+{ label: "⇊", latex: "\\downdownarrows", title: "Down Double Arrows" },
+{ label: "⇇", latex: "\\leftleftarrows", title: "Left Double Arrows" },
+{ label: "⇉", latex: "\\rightrightarrows", title: "Right Double Arrows" },
+{ label: "⇄", latex: "\\rightleftarrows", title: "Right Left Arrows" },
+{ label: "⇌", latex: "\\rightleftharpoons", title: "Right Left Harpoons" },
+{ label: "↽", latex: "\\leftharpoondown", title: "Left Harpoon Down" },
+{ label: "⇁", latex: "\\rightharpoondown", title: "Right Harpoon Down" },
+{ label: "⇆", latex: "\\leftrightarrows", title: "Left Right Arrows" },
+{ label: "↓", latex: "\\downarrow", title: "Down Arrow" },
+
+{ label: "↿", latex: "\\upharpoonleft", title: "Up Harpoon Left" },
+{ label: "⇃", latex: "\\downharpoonright", title: "Down Harpoon Right" },
+{ label: "⇄", latex: "\\rightleftarrows", title: "Right Left Arrows" },
+{ label: "⇆", latex: "\\leftrightarrows", title: "Left Right Arrows" },
+{ label: "↕", latex: "\\updownarrow", title: "Up Down Arrow" },
+{ label: "⇕", latex: "\\Updownarrow", title: "Up Down Double Arrow" },
+{ label: "↵", latex: "\\hookleftarrow", title: "Return Arrow" },
+null,
+null,
+  ],
+   moreCols: 9 },
   { cols: 2, groupClass: "mr-funcs-operators-group", cellWidth: 33, cellGap: 1, items: [
-    { label: "⋮", latex: "\\vdots" }, { label: "⋰", latex: "⋰" },
-    { label: "⋯", latex: "\\cdots" }, { label: "⋱", latex: "\\ddots" },
+   { label: "⋮", latex: "\\vdots", title: "Vertical Dots" },
+{ label: "⋰", latex: "⋰", title: "Up Diagonal Dots" },
+{ label: "⋯", latex: "\\cdots", title: "Horizontal Dots" },
+{ label: "⋱", latex: "\\ddots", title: "Down Diagonal Dots" },
   ]},
   { cols: 1, items: [
-    { label: "‾\n⬚", latex: "\\overline{#0}" },
-    { label: "⬚\n_", latex: "\\underline{#0}" },
+   { label: "‾\n⬚", latex: "\\overline{#0}", title: "Overline" },
+   { label: "⬚\n_", latex: "\\underline{#0}", title: "Underline" },
   ]},
   { cols: 3, items: [
-    { label: "→\n⬚", latex: "\\xrightarrow[#?]{}", icon: "xrightarrow-top-template-image" }, { label: "⬚\n→", latex: "\\xrightarrow{#?}", icon: "xrightarrow-bottom-template-image" }, { label: "⬚\n→\n⬚", latex: "\\xrightarrow[#?]{#?}", icon: "xrightarrow-both-template-image" },
-    { label: "←\n⬚", latex: "\\xleftarrow[#?]{}", icon: "xleftarrow-top-template-image" }, { label: "⬚\n←", latex: "\\xleftarrow{#?}", icon: "xleftarrow-bottom-template-image" }, { label: "⬚\n←\n⬚", latex: "\\xleftarrow[#?]{#?}", icon: "xleftarrow-both-template-image" },
-  ], more: [
-{ label: "↔̅", latex: "\\xleftrightarrow{#?}", icon: "leftrightarrow-over-template-image" },
-{ label: "↔̲", latex: "\\xleftrightarrow[#?]{}", icon: "leftrightarrow-under-template-image" },
-{ label: "↔̲̅", latex: "\\xleftrightarrow[#?]{#?}", icon: "leftrightarrow-over-under-template-image" },
+   { label: "→\n⬚", latex: "\\xrightarrow[#?]{}", icon: "xrightarrow-top-template-image", title: "Right Arrow with Text Above" },
+{ label: "⬚\n→", latex: "\\xrightarrow{#?}", icon: "xrightarrow-bottom-template-image", title: "Right Arrow with Text Below" },
+{ label: "⬚\n→\n⬚", latex: "\\xrightarrow[#?]{#?}", icon: "xrightarrow-both-template-image", title: "Right Arrow with Text Above and Below" },
 
-{ label: "⇆̅", latex: "\\xtofrom{#?}", icon: "leftrightarrows-over-template-image" },
-{ label: "⇆̲", latex: "\\xtofrom[#?]{}", icon: "leftrightarrows-under-template-image" },
-{ label: "⇆̲̅", latex: "\\xtofrom[#?]{#?}", icon: "leftrightarrows-over-under-template-image" },
+{ label: "←\n⬚", latex: "\\xleftarrow[#?]{}", icon: "xleftarrow-top-template-image", title: "Left Arrow with Text Above" },
+{ label: "⬚\n←", latex: "\\xleftarrow{#?}", icon: "xleftarrow-bottom-template-image", title: "Left Arrow with Text Below" },
+{ label: "⬚\n←\n⬚", latex: "\\xleftarrow[#?]{#?}", icon: "xleftarrow-both-template-image", title: "Left Arrow with Text Above and Below" },
+  ],
+   more: [
+{ label: "↔̅", latex: "\\xleftrightarrow{#?}", icon: "leftrightarrow-over-template-image", title: "Left-Right Arrow with Text Above" },
+{ label: "↔̲", latex: "\\xleftrightarrow[#?]{}", icon: "leftrightarrow-under-template-image", title: "Left-Right Arrow with Text Below" },
+{ label: "↔̲̅", latex: "\\xleftrightarrow[#?]{#?}", icon: "leftrightarrow-over-under-template-image", title: "Left-Right Arrow with Text Above and Below" },
 
-{ label: "⇄̅", latex: "\\xleftrightarrows{#?}", icon: "rightleftarrows-over-template-image" },
-{ label: "⇄̲", latex: "\\xleftrightarrows[#?]{}", icon: "rightleftarrows-under-template-image" },
-{ label: "⇄̲̅", latex: "\\xleftrightarrows[#?]{#?}", icon: "rightleftarrows-over-under-template-image" },
+{ label: "⇆̅", latex: "\\xtofrom{#?}", icon: "leftrightarrows-over-template-image", title: "Left-Right Arrows with Text Above" },
+{ label: "⇆̲", latex: "\\xtofrom[#?]{}", icon: "leftrightarrows-under-template-image", title: "Left-Right Arrows with Text Below" },
+{ label: "⇆̲̅", latex: "\\xtofrom[#?]{#?}", icon: "leftrightarrows-over-under-template-image", title: "Left-Right Arrows with Text Above and Below" },
 
-{ label: "⇋̅", latex: "\\xleftrightharpoons{#?}", icon: "leftrightharpoons-over-template-image" },
-{ label: "⇋̲", latex: "\\xleftrightharpoons[#?]{}", icon: "leftrightharpoons-under-template-image" },
-{ label: "⇋̲̅", latex: "\\xleftrightharpoons[#?]{#?}", icon: "leftrightharpoons-over-under-template-image" },
+{ label: "⇄̅", latex: "\\xleftrightarrows{#?}", icon: "rightleftarrows-over-template-image", title: "Right-Left Arrows with Text Above" },
+{ label: "⇄̲", latex: "\\xleftrightarrows[#?]{}", icon: "rightleftarrows-under-template-image", title: "Right-Left Arrows with Text Below" },
+{ label: "⇄̲̅", latex: "\\xleftrightarrows[#?]{#?}", icon: "rightleftarrows-over-under-template-image", title: "Right-Left Arrows with Text Above and Below" },
 
-{ label: "⇌̅", latex: "\\xLeftrightharpoons{#?}", icon: "rightleftharpoons-over-template-image" },
-{ label: "⇌̲", latex: "\\xLeftrightharpoons[#?]{}", icon: "rightleftharpoons-under-template-image" },
-{ label: "⇌̲̅", latex: "\\xLeftrightharpoons[#?]{#?}", icon: "rightleftharpoons-over-under-template-image" },
+{ label: "⇋̅", latex: "\\xleftrightharpoons{#?}", icon: "leftrightharpoons-over-template-image", title: "Left-Right Harpoons with Text Above" },
+{ label: "⇋̲", latex: "\\xleftrightharpoons[#?]{}", icon: "leftrightharpoons-under-template-image", title: "Left-Right Harpoons with Text Below" },
+{ label: "⇋̲̅", latex: "\\xleftrightharpoons[#?]{#?}", icon: "leftrightharpoons-over-under-template-image", title: "Left-Right Harpoons with Text Above and Below" },
 
-{ label: "⥂̅", latex: "\\overset{#?}{\\underset{\\leftarrow}{\\rightarrow}}", icon: "right-over-short-left-over-template-image" },
-{ label: "⥂̲", latex: "\\underset{#?}{\\underset{\\leftarrow}{\\rightarrow}}", icon: "right-over-short-left-under-template-image" }, 
-{ label: "⥂̲̅", latex: "\\overset{#?}{\\underset{#?}{\\underset{\\leftarrow}{\\rightarrow}}}", icon: "right-over-short-left-over-under-template-image" },
+{ label: "⇌̅", latex: "\\xLeftrightharpoons{#?}", icon: "rightleftharpoons-over-template-image", title: "Right-Left Harpoons with Text Above" },
+{ label: "⇌̲", latex: "\\xLeftrightharpoons[#?]{}", icon: "rightleftharpoons-under-template-image", title: "Right-Left Harpoons with Text Below" },
+{ label: "⇌̲̅", latex: "\\xLeftrightharpoons[#?]{#?}", icon: "rightleftharpoons-over-under-template-image", title: "Right-Left Harpoons with Text Above and Below" },
 
-{ label: "⥃̅", latex: "\\overset{#?}{\\overset{\\rightarrow}{\\leftarrow}}", icon: "short-right-over-left-over-template-image" }, 
-{ label: "⥃̲", latex: "\\underset{#?}{\\overset{\\rightarrow}{\\leftarrow}}", icon: "short-right-over-left-under-template-image" },
-{ label: "⥃̲̅", latex: "\\overset{#?}{\\underset{#?}{\\overset{\\rightarrow}{\\leftarrow}}}", icon: "short-right-over-left-over-under-template-image" }, 
+{ label: "⥂̅", latex: "\\overset{#?}{\\underset{\\leftarrow}{\\rightarrow}}", icon: "right-over-short-left-over-template-image", title: "Right over Left Arrow with Text Above" },
+{ label: "⥂̲", latex: "\\underset{#?}{\\underset{\\leftarrow}{\\rightarrow}}", icon: "right-over-short-left-under-template-image", title: "Right over Left Arrow with Text Below" },
+{ label: "⥂̲̅", latex: "\\overset{#?}{\\underset{#?}{\\underset{\\leftarrow}{\\rightarrow}}}", icon: "right-over-short-left-over-under-template-image", title: "Right over Left Arrow with Text Above and Below" },
+
+{ label: "⥃̅", latex: "\\overset{#?}{\\overset{\\rightarrow}{\\leftarrow}}", icon: "short-right-over-left-over-template-image", title: "Left over Right Arrow with Text Above" },
+{ label: "⥃̲", latex: "\\underset{#?}{\\overset{\\rightarrow}{\\leftarrow}}", icon: "short-right-over-left-under-template-image", title: "Left over Right Arrow with Text Below" },
+{ label: "⥃̲̅", latex: "\\overset{#?}{\\underset{#?}{\\overset{\\rightarrow}{\\leftarrow}}}", icon: "short-right-over-left-over-under-template-image", title: "Left over Right Arrow with Text Above and Below" },
 
   ], moreCols: 11, dropdownClass: "mr-dropdown-script-arrows", moreCellWidth: 32, moreCellGap: 2 },
   { cols: 2, groupClass: "mr-tab3-accent-group", cellWidth: 32, cellGap: 2, items: [
-    { label: "→\n⬚", latex: "\\xrightarrow[#?]{}", icon: "xrightarrow-under-custom-template-image" }, 
-    { label: "↔\n⬚", latex: "\\xleftrightarrow[#?]{}", icon: "xleftrightarrow-under-custom-template-image" },
-    { label: "⇀\n⬚", latex: "\\overrightharpoon{#0}", icon: "overrightharpoon-custom-template-image" }, 
-    { label: "‾\n⬚", latex: "\\overline{#0}", icon: "overline-custom-template-image" },
+{ label: "→\n⬚", latex: "\\xrightarrow[#?]{}", icon: "xrightarrow-under-custom-template-image", title: "Right Arrow with Text Below" },
+{ label: "↔\n⬚", latex: "\\xleftrightarrow[#?]{}", icon: "xleftrightarrow-under-custom-template-image", title: "Left-Right Arrow with Text Below" },
+{ label: "⇀\n⬚", latex: "\\overrightharpoon{#0}", icon: "overrightharpoon-custom-template-image", title: "Right Harpoon Over Expression" },
+{ label: "‾\n⬚", latex: "\\overline{#0}", icon: "overline-custom-template-image", title: "Overline" },
   ]},
 ];
 
@@ -237,234 +274,239 @@ const TAB4_GROUPS = [
 const TAB5_GROUPS = [
   { type: "inline-matrix-picker" },
   { cols: 3, groupClass: "mr-tab5-matrix-group", cellWidth: 34, cellGap: 1, items: [
-    { label: "□\n□\n□", latex: "\\begin{matrix} #? \\\\ #? \\\\ #? \\end{matrix}", icon: "matrix-vertical-plain-template-image" },
-    { label: "[□\n□]", latex: "\\left[\\vphantom{\\begin{array}{c}X\\\\[2pt]X\\end{array}}\\begin{matrix} #? \\\\[-1pt] #? \\end{matrix}\\right]", icon: "matrix-vertical-square-template-image" },
-    { label: "(□\n□)", latex: "\\left(\\vphantom{\\begin{array}{c}X\\\\[2pt]X\\end{array}}\\begin{matrix} #? \\\\[-1pt] #? \\end{matrix}\\right)", icon: "matrix-vertical-round-template-image" },
-    { label: "□ □ □", latex: "\\begin{matrix} #? \\, #? \\, #? \\end{matrix}", icon: "matrix-horizontal-plain-template-image" },
-    { label: "[□ & □]", latex: "\\left[\\begin{matrix} #? \\, #? \\end{matrix}\\right]", icon: "matrix-horizontal-square-template-image" },
-    { label: "(□ & □)", latex: "\\left(\\begin{matrix} #? \\, #? \\end{matrix}\\right)", icon: "matrix-horizontal-round-template-image" },
+    { label: "□\n□\n□", latex: "\\begin{matrix} #? \\\\ #? \\\\ #? \\end{matrix}", icon: "matrix-vertical-plain-template-image", title: "Vertical Matrix" },
+{ label: "[□\n□]", latex: "\\left[\\vphantom{\\begin{array}{c}X\\\\[2pt]X\\end{array}}\\begin{matrix} #? \\\\[-1pt] #? \\end{matrix}\\right]", icon: "matrix-vertical-square-template-image", title: "Column Matrix (Square Brackets)" },
+{ label: "(□\n□)", latex: "\\left(\\vphantom{\\begin{array}{c}X\\\\[2pt]X\\end{array}}\\begin{matrix} #? \\\\[-1pt] #? \\end{matrix}\\right)", icon: "matrix-vertical-round-template-image", title: "Column Matrix (Parentheses)" },
+{ label: "□ □ □", latex: "\\begin{matrix} #? \\, #? \\, #? \\end{matrix}", icon: "matrix-horizontal-plain-template-image", title: "Horizontal Matrix" },
+{ label: "[□ & □]", latex: "\\left[\\begin{matrix} #? \\, #? \\end{matrix}\\right]", icon: "matrix-horizontal-square-template-image", title: "Row Matrix (Square Brackets)" },
+{ label: "(□ & □)", latex: "\\left(\\begin{matrix} #? \\, #? \\end{matrix}\\right)", icon: "matrix-horizontal-round-template-image", title: "Row Matrix (Parentheses)" },
   ]},
   { cols: 2, groupClass: "mr-tab5-cases-group", cellWidth: 34, cellGap: 1, items: [
-    { label: "{", latex: "\\left\\{\\begin{matrix} \\rule[-0.35em]{0pt}{1.9em}#? \\\\[4pt] \\rule[-0.35em]{0pt}{1.9em}#? \\end{matrix}\\right.", icon: "cases-left-template-image" },
-    { label: "f(x)", latex: "\\left\\{\\begin{matrix} \\rule[-0.35em]{0pt}{1.9em}#?, \\, #? \\\\[4pt] \\rule[-0.35em]{0pt}{1.9em}#?, \\, #? \\end{matrix}\\right.", icon: "cases-piecewise-template-image" },
-    { label: "}", latex: "\\left.\\vphantom{\\begin{array}{c}X\\\\[2pt]X\\end{array}}\\begin{matrix} #? \\\\ #? \\end{matrix}\\right\\}", icon: "cases-right-template-image" },
-    { label: "=", latex: "\\begin{aligned} #? &= #? \\\\ #? &= #? \\end{aligned}", icon: "aligned-equations-template-image" },
+    { label: "{", latex: "\\left\\{\\begin{matrix} \\rule[-0.35em]{0pt}{1.9em}#? \\\\[4pt] \\rule[-0.35em]{0pt}{1.9em}#? \\end{matrix}\\right.", icon: "cases-left-template-image", title: "Left Cases" },
+{ label: "f(x)", latex: "\\left\\{\\begin{matrix} \\rule[-0.35em]{0pt}{1.9em}#?, \\, #? \\\\[4pt] \\rule[-0.35em]{0pt}{1.9em}#?, \\, #? \\end{matrix}\\right.", icon: "cases-piecewise-template-image", title: "Piecewise Function" },
+{ label: "}", latex: "\\left.\\vphantom{\\begin{array}{c}X\\\\[2pt]X\\end{array}}\\begin{matrix} #? \\\\ #? \\end{matrix}\\right\\}", icon: "cases-right-template-image", title: "Right Cases" },
+{ label: "=", latex: "\\begin{aligned} #? &= #? \\\\ #? &= #? \\end{aligned}", icon: "aligned-equations-template-image", title: "Aligned Equations" },
   ]},
   { cols: 2, groupClass: "mr-tab5-dots-group", cellWidth: 32, cellGap: 1, items: [
-    { label: "⋮", latex: "\\vdots" },
-    { label: "⋰", latex: "⋰" },
-    { label: "…", latex: "\\ldots" },
-    { label: "⋱", latex: "\\ddots" },
+    { label: "⋮", latex: "\\vdots" , title:"Vertical ellipsis"},
+    { label: "⋰", latex: "⋰", title:"Up Right diagnol ellipsis" },
+    { label: "…", latex: "\\ldots", title:"horizontal ellipsis"},
+    { label: "⋱", latex: "\\ddots", title:"Up Left ellipsis" },
   ]},
   { cols: 1, groupClass: "mr-tab5-array-group", cellWidth: 34, cellGap: 1, items: [
-    { label: "+", latex: "\\frac{\\begin{array}{r}#?\\\\+\\,#?\\end{array}}{\\quad#?}", icon: "addition-array-template-image" },
-    { label: "⟌", latex: "#?\\, ) \\!\\! \\overset{\\displaystyle #?}{\\overline{\\vphantom{1}\\;\\;#?\\;}}", icon: "long-division-template-image" },
+    { label: "+", latex: "\\frac{\\begin{array}{r}#?\\\\+\\,#?\\end{array}}{\\quad#?}", icon: "addition-array-template-image", title: "Vertical Addition" },
+{ label: "⟌", latex: "#?\\, ) \\!\\! \\overset{\\displaystyle #?}{\\overline{\\vphantom{1}\\;\\;#?\\;}}", icon: "long-division-template-image", title: " Division" },
   ], more: [
-    { label: " ", latex: "\\frac{\\begin{array}{r}#?\\\\ \\,#?\\end{array}}{\\;#?}", icon: "blank-array-template-image" },
-    { label: "-", latex: "\\frac{\\begin{array}{r}#?\\\\-\\,#?\\end{array}}{\\quad#?}", icon: "subtraction-array-template-image" },
-    { label: "*", latex: "\\frac{\\begin{array}{r}#?\\\\*\\,#?\\end{array}}{\\quad#?}", icon: "multiplication-array-template-image" },
-    { label: "÷", latex: "\\begin{array}{r@{}l} #?\\, & \\begin{array}{|@{}l} \\underline{\\;#?\\;\\,} \\end{array} \\\\ & \\; #? \\end{array}", icon: "division-array-template-image" },
-    { label: "÷", latex: "\\begin{array}{r@{}l} #?\\, & \\begin{array}{|@{}l} \\underline{\\;#?\\;\\,} \\end{array} \\\\ #?\\, & \\; #? \\end{array}", icon: "division-four-box-template-image" },
-    { label: "⟌", latex: "#?\\, ) \\!\\!\\!\\!\\! \\begin{array}\\overset{\\displaystyle #?}{\\overline{\\vphantom{1}\\;\\;#?\\;}} \\\\ \\;\\;#?\\; \\end{array}", icon: "long-division-stacked-template-image" },
+    { label: " ", latex: "\\frac{\\begin{array}{r}#?\\\\ \\,#?\\end{array}}{\\;#?}", icon: "blank-array-template-image", title: "Blank Vertical Calculation" },
+{ label: "-", latex: "\\frac{\\begin{array}{r}#?\\\\-\\,#?\\end{array}}{\\quad#?}", icon: "subtraction-array-template-image", title: "Vertical Subtraction" },
+{ label: "*", latex: "\\frac{\\begin{array}{r}#?\\\\*\\,#?\\end{array}}{\\quad#?}", icon: "multiplication-array-template-image", title: "Vertical Multiplication" },
+{ label: "÷", latex: "\\begin{array}{r@{}l} #?\\, & \\begin{array}{|@{}l} \\underline{\\;#?\\;\\,} \\end{array} \\\\ & \\; #? \\end{array}", icon: "division-array-template-image", title: "Long Division" },
+{ label: "÷", latex: "\\begin{array}{r@{}l} #?\\, & \\begin{array}{|@{}l} \\underline{\\;#?\\;\\,} \\end{array} \\\\ #?\\, & \\; #? \\end{array}", icon: "division-four-box-template-image", title: "Long Division (Four-Step)" },
+{ label: "⟌", latex: "#?\\, ) \\!\\!\\!\\!\\! \\begin{array}\\overset{\\displaystyle #?}{\\overline{\\vphantom{1}\\;\\;#?\\;}} \\\\ \\;\\;#?\\; \\end{array}", icon: "long-division-stacked-template-image", title: "Stacked Long Division" },
   ], moreCols: 3 },
 ];
 // eslint-disable-next-line no-unused-vars
 const TAB6_GROUPS = [
   // Section 1 â€” Fractions
   { cols: 2, groupClass: "mr-funcs-fractions-group", cellWidth: 34, cellGap: 1, items: [
-    { label: "⬚_⬚", latex: "\\frac{#0}{#?}", icon: "fraction-template-image" },                      // big fraction
-    { label: "⬚_⬚", latex: "\\frac{#0}{#?}", icon: "fraction-template-image" },                      // small fraction
-{ label: "â¬šâ•±â¬š", latex: "{}^{#0}\\mkern-2mu/\\mkern-2mu_{#?}", icon: "bevelled-fraction-template-image" },
-{ label: "â¬šâ•±â¬š", latex: "\\scriptstyle{{}^{#0}\\mkern-2mu/\\mkern-2mu_{#?}}", icon: "bevelled-fraction-template-image" },            // bevelled small fraction
+    { label: "⬚_⬚", latex: "\\dfrac{#0}{#?}", icon: "fraction-template-image", title: "Big Fraction" },
+{ label: "⬚_⬚", latex: "\\tfrac{#0}{#?}", icon: "fraction-template-image", title: "small Fraction" },                      // small fraction
+{ label: "â¬šâ•±â¬š", latex: "{}^{#0}\\mkern-2mu/\\mkern-2mu_{#?}", icon: "bevelled-fraction-template-image", title: "Bevelled big fraction" },
+{ label: "â¬šâ•±â¬š", latex: "\\scriptstyle{{}^{#0}\\mkern-2mu/\\mkern-2mu_{#?}}", icon: "bevelled-fraction-template-image", title: "Bevelled small Fraction" },            // bevelled small fraction
   ]},
 
   // Section 2 â€” Roots
   { cols: 1, groupClass: "mr-funcs-roots-group", cellWidth: 34, cellGap: 1, items: [
-    { label: "√⬚", latex: "\\sqrt{#0}", icon: "sqrt-template-image" },                                // square root
-    { label: "ⁿ√⬚", latex: "\\sqrt[#?\\;]{#0}", icon: "nth-root-template-image" },                           // root (nth root)
+    { label: "√⬚", latex: "\\sqrt{#0}", icon: "sqrt-template-image", title: "Square Root" },                                // square root
+    { label: "ⁿ√⬚", latex: "\\sqrt[#?\\;]{#0}", icon: "nth-root-template-image", title: "Root"  },                           // root (nth root)
   ]},
 
   // Section 3 â€” Scripts
   { cols: 3, groupClass: "mr-funcs-scripts-group", cellWidth: 32, cellGap: 1, items: [
-    { label: "⬚ⁿ", latex: "#0^{#?}", icon: "superscript-template-image" },                                   // superscript
-    { label: "â¬šâ¿\nâ¬šâ‚™", latex: "#0_{#?}^{#?}", icon: "right-sup-sub-template-image" },                          // superscript and subscript
-    { label: "⬚ₙ", latex: "#0_{#?}", icon: "subscript-template-image" },                                   // subscript
-    { label: "â¿â¬š", latex: "{}^{#?}#0", icon: "left-sup-template-image" },                                 // left superscript
-    { label: "â¿â¬š\nâ‚™", latex: "{}_{#?}^{#?}#0", icon: "left-sup-sub-template-image" },                         // left superscript and subscript
-    { label: "â‚™â¬š", latex: "{}_{#?}#0", icon: "left-sub-template-image" },                                 // left subscript
+    { label: "⬚ⁿ", latex: "#0^{#?}", icon: "superscript-template-image", title: "Superscript"  },                                   // superscript
+    { label: "â¬šâ¿\nâ¬šâ‚™", latex: "#0_{#?}^{#?}", icon: "right-sup-sub-template-image", title: "Superscript & subscript"  },                          // superscript and subscript
+    { label: "⬚ₙ", latex: "#0_{#?}", icon: "subscript-template-image", title: "Subscript"  },                                   // subscript
+    { label: "â¿â¬š", latex: "{}^{#?}#0", icon: "left-sup-template-image", title: "Left Superscript"  },                                 // left superscript
+    { label: "â¿â¬š\nâ‚™", latex: "{}_{#?}^{#?}#0", icon: "left-sup-sub-template-image", title: "Left Superscript & subscript" },                         // left superscript and subscript
+    { label: "â‚™â¬š", latex: "{}_{#?}#0", icon: "left-sub-template-image", title: "Left Subscript" },                                 // left subscript
   ]},
 
   // Section 4 â€” Element scripts
   { cols: 2, groupClass: "mr-funcs-element-scripts-group", cellWidth: 32, cellGap: 1, items: [
-    { label: "â¬š\nâ¬š", latex: "\\overset{#?}{#0}", icon: "overset-template-image" },                       // element over
-    { label: "â¬š\nâ¬š", latex: "\\underset{#?}{#0}", icon: "underset-template-image" },                      // element under
-    { label: "â¬š\nâ¬š\nâ¬š", latex: "\\overset{#?}{\\underset{#?}{#0}}", icon: "over-under-template-image" },    // element under and over
+    { label: "â¬š\nâ¬š", latex: "\\overset{#?}{#0}", icon: "overset-template-image", title: "Element over" },                       // element over
+    { label: "â¬š\nâ¬š", latex: "\\underset{#?}{#0}", icon: "underset-template-image", title: "Element under" },                      // element under
+    { label: "â¬š\nâ¬š\nâ¬š", latex: "\\overset{#?}{\\underset{#?}{#0}}", icon: "over-under-template-image", title: "Element over&under" },    // element under and over
   ]},
 
   // Section 5 â€” Underscript/Overscript with braces
   { cols: 1, groupClass: "mr-funcs-braces-group", cellWidth: 34, cellGap: 1, items: [
-    { label: "âŸ\nâ¬š", latex: "\\underbrace{#0}_{#?}", icon: "underbrace-template-image" },                   // underscript with braces
-    { label: "â¬š\nâž", latex: "\\overbrace{#0}^{#?}", icon: "overbrace-template-image" },                    // overscript with braces
+    { label: "âŸ\nâ¬š", latex: "\\underbrace{#0}_{#?}", icon: "underbrace-template-image", title: "Underscript with braces" },                   // underscript with braces
+    { label: "â¬š\nâž", latex: "\\overbrace{#0}^{#?}", icon: "overbrace-template-image" , title: "Overscript with braces"},                    // overscript with braces
   ]},
 
   //  Big operators with scripts (generic operator placeholder)
   { cols: 2, groupClass: "mr-funcs-operators-group", cellWidth: 33, cellGap: 1, items: [
-    { label: "â¬š\nâ€\nâ¬š", latex: "\\overset{#?}{\\underset{#?}{#?}}", icon: "operator-limits-both-template-image" },
-    { label: "â¬šâŒ", latex: "#?_{#?}^{#?}", icon: "operator-right-sup-sub-template-image" },
-    { label: "â¬š\nâ€", latex: "\\underset{#?}{#?}", icon: "operator-lower-limit-template-image" },
-    { label: "â¬šâŒâ‚™", latex: "#?_{#?}", icon: "operator-right-sub-template-image" },
+    { label: "â¬š\nâ€\nâ¬š", latex: "\\overset{#?}{\\underset{#?}{#?}}", icon: "operator-limits-both-template-image", title: "Big operator with under & over script" },
+    { label: "â¬šâŒ", latex: "#?_{#?}^{#?}", icon: "operator-right-sup-sub-template-image", title: "Big operator with subscript & superscript" },
+    { label: "â¬š\nâ€", latex: "\\underset{#?}{#?}", icon: "operator-lower-limit-template-image", title: "Big operator with underscript" },
+    { label: "â¬šâŒâ‚™", latex: "#?_{#?}", icon: "operator-right-sub-template-image", title: "Big operator with subscript "},
   ]},
 
   { cols: 2, groupClass: "mr-funcs-spacing-group", cellWidth: 30, cellGap: 1, items: [
-    { label: "â¬š â¬š", latex: "\\;", icon: "digit-space-template-image" },                                      // digit space
-    { label: "â¬šâ¬š", latex: "\\,", icon: "thin-space-template-image" },                                       // thinner space
-    { label: "â¬šâ¬š", latex: "\\!", icon: "negative-thin-space-template-image" },                                       // back space (negative thin space)
+    { label: "â¬š â¬š", latex: "\\;", icon: "digit-space-template-image", title: "Digit space" },                                      // digit space
+    { label: "â¬šâ¬š", latex: "\\,", icon: "thin-space-template-image", title: "Thinner space" },                                       // thinner space
+    { label: "â¬šâ¬š", latex: "\\!", icon: "negative-thin-space-template-image", title: "Backspace" },                                       // back space (negative thin space)
   ]},
 ];
 
  const TAB7_GROUPS = [
   // Group 1 â€” bracket/delimiter pairs (3 cols Ã— 2 rows)
   { cols: 3, items: [
-  { label: "(â¬š)", latex: "\\left(#0\\right)", icon: "paren-delimiter-template-image" },
-  { label: "|â¬š|", latex: "\\left|#0\\right|", icon: "bar-delimiter-template-image" },
-  { label: "âŸ¨â¬šâŸ©", latex: "\\left\\langle#0\\right\\rangle", icon: "angle-delimiter-template-image" },
-  { label: "[â¬š]", latex: "\\left[#0\\right]", icon: "bracket-delimiter-template-image" },
-  { label: "â€–â¬šâ€–", latex: "\\left\\|#0\\right\\|", icon: "double-bar-delimiter-template-image" },
-  { label: "{â¬š}", latex: "\\left\\{#0\\right\\}", icon: "brace-delimiter-template-image" },
+  { label: "(⬚)", latex: "\\left(#0\\right)", icon: "paren-delimiter-template-image", title: "Parentheses" },
+{ label: "|⬚|", latex: "\\left|#0\\right|", icon: "bar-delimiter-template-image", title: "Absolute Value" },
+{ label: "⟨⬚⟩", latex: "\\left\\langle#0\\right\\rangle", icon: "angle-delimiter-template-image", title: "Angle Brackets" },
+{ label: "[⬚]", latex: "\\left[#0\\right]", icon: "bracket-delimiter-template-image", title: "Square Brackets" },
+{ label: "‖⬚‖", latex: "\\left\\|#0\\right\\|", icon: "double-bar-delimiter-template-image", title: "Double Vertical Bars" },
+{ label: "{⬚}", latex: "\\left\\{#0\\right\\}", icon: "brace-delimiter-template-image", title: "Curly Braces" },
 ], more: [
-  { label: "âŒŠâ¬šâŒ‹", latex: "\\left\\lfloor#0\\right\\rfloor", icon: "floor-delimiter-template-image" },
-  { label: "âŸ¨â¬š|â¬šâŸ©", latex: "\\left\\langle#0\\middle|#?\\right\\rangle", icon: "bra-ket-delimiter-template-image" },
-  { label: "âŒˆâ¬šâŒ‰", latex: "\\left\\lceil#0\\right\\rceil", icon: "ceiling-delimiter-template-image" },
+  { label: "⌊⬚⌋", latex: "\\left\\lfloor#0\\right\\rfloor", icon: "floor-delimiter-template-image", title: "Floor" },
+{ label: "⟨⬚|⬚⟩", latex: "\\left\\langle#0\\middle|#?\\right\\rangle", icon: "bra-ket-delimiter-template-image", title: "Angle bracket Notation" },
+{ label: "⌈⬚⌉", latex: "\\left\\lceil#0\\right\\rceil", icon: "ceiling-delimiter-template-image", title: "Ceiling" },
 ], moreCols: 3 },
   // Group 2 â€” over/under brace and paren accents (2 cols Ã— 2 rows)
   { cols: 2, items: [
-    { label: "âž\nâ¬š", latex: "\\overbrace{#0}", icon: "overbrace-plain-template-image" },
-    { label: "âœ\nâ¬š", latex: "\\overparen{#0}", icon: "overparen-template-image" },
-    { label: "â¬š\nâŸ", latex: "\\underbrace{#0}", icon: "underbrace-plain-template-image" },
-    { label: "â¬š\nâ", latex: "\\underparen{#0}", icon: "underparen-template-image" },
+   { label: "⏞\n⬚", latex: "\\overbrace{#0}", icon: "overbrace-plain-template-image", title: "Overbracket" },
+{ label: "⏜\n⬚", latex: "\\overparen{#0}", icon: "overparen-template-image", title: "Overparenthesis" },
+{ label: "⬚\n⏟", latex: "\\underbrace{#0}", icon: "underbrace-plain-template-image", title: "Underbracket" },
+{ label: "⬚\n⏝", latex: "\\underparen{#0}", icon: "underparen-template-image", title: "Underparenthesis" },
   ]},
   // Group 3 â€” accent marks over a box (3 cols Ã— 3 rows, last cell empty)
 { cols: 3, items: [
-  { label: "â‡€\nâ¬š", latex: "\\overrightharpoon{#0}", icon: "vec-accent-template-image" },
-  { label: "âŸ¶\nâ¬š", latex: "\\overrightarrow{#0}", icon: "overrightarrow-accent-template-image" },
-  { label: "â†”\nâ¬š", latex: "\\overleftrightarrow{#0}", icon: "overleftrightarrow-accent-template-image" },
-  { label: "Ë‰\nâ¬š", latex: "\\overline{#0}", icon: "bar-accent-template-image" },
-  { label: "Ë†\nâ¬š", latex: "\\overset{\\wedge}{\\overline{#0}}", icon: "hat-accent-template-image" },
-  { label: "Ëœ\nâ¬š", latex: "\\tilde{#0}", icon: "tilde-accent-template-image" },
-  { label: "Â¨\nâ¬š", latex: "\\ddot{#0}", icon: "ddot-accent-template-image" },
-  { label: "Ë™\nâ¬š", latex: "\\dot{#0}", icon: "dot-accent-template-image" },
+ { label: "⇀\n⬚", latex: "\\overrightharpoon{#0}", icon: "vec-accent-template-image", title: "Right Harpoon Accent" },
+{ label: "⟶\n⬚", latex: "\\overrightarrow{#0}", icon: "overrightarrow-accent-template-image", title: "Vector Arrow" },
+{ label: "↔\n⬚", latex: "\\overleftrightarrow{#0}", icon: "overleftrightarrow-accent-template-image", title: "Double Arrow Accent" },
+{ label: "‾\n⬚", latex: "\\overline{#0}", icon: "bar-accent-template-image", title: "Overline" },
+{ label: "ˆ\n⬚", latex: "\\overset{\\wedge}{\\overline{#0}}", icon: "hat-accent-template-image", title: "Hat Accent" },
+{ label: "˜\n⬚", latex: "\\tilde{#0}", icon: "tilde-accent-template-image", title: "Tilde Accent" },
+{ label: "¨\n⬚", latex: "\\ddot{#0}", icon: "ddot-accent-template-image", title: "Double Dot Accent" },
+{ label: "˙\n⬚", latex: "\\dot{#0}", icon: "dot-accent-template-image", title: "Dot Accent" },
 ]},
 // Group 4 â€” overline/underline/boxed/circled enclosures (3 cols Ã— 2 rows)
   { cols: 3, items: [
-    { label: "â€¾\nâ¬š", latex: "\\overline{#0}", icon: "overline-enclosure-template-image" },
-    { label: "|â¬š", latex: "|#0", icon: "left-bar-enclosure-template-image" },
-    { label: "â–­\nâ¬š", latex: "\\boxed{#0}", icon: "boxed-enclosure-template-image" },
-    { label: "â¬š\n_", latex: "\\underline{#0}", icon: "underline-enclosure-template-image" },
-    { label: "â¬š|", latex: "#0|", icon: "right-bar-enclosure-template-image" },
-    { label: "â“„", latex: "\\enclose{circle}{#0}", icon: "circle-enclosure-template-image" },
+  { label: "‾\n⬚", latex: "\\overline{#0}", icon: "overline-enclosure-template-image", title: "Overline" },
+{ label: "|⬚", latex: "|#0", icon: "left-bar-enclosure-template-image", title: "Left Bar" },
+{ label: "▭\n⬚", latex: "\\boxed{#0}", icon: "boxed-enclosure-template-image", title: "Box" },
+{ label: "⬚\n_", latex: "\\underline{#0}", icon: "underline-enclosure-template-image", title: "Underline" },
+{ label: "⬚|", latex: "#0|", icon: "right-bar-enclosure-template-image", title: "Right Bar" },
+{ label: "Ⓞ", latex: "\\enclose{circle}{#0}", icon: "circle-enclosure-template-image", title: "Circle" },
   ], more: [
-    { label: "âŒâ¬š", latex: "\\enclose{actuarial}{#0}", icon: "actuarial-enclosure-template-image" },
-    { label: "â–¢\nâ¬š", latex: "\\enclose{roundedbox}{#0}", icon: "roundedbox-enclosure-template-image" },
+  { label: "⌐⬚", latex: "\\enclose{actuarial}{#0}", icon: "actuarial-enclosure-template-image", title: "Actuarial Enclosure" },
+{ label: "▢\n⬚", latex: "\\enclose{roundedbox}{#0}", icon: "roundedbox-enclosure-template-image", title: "Rounded Box" },
   ], moreCols: 2 },
   // Group 5 â€” strike-through enclosures (2 cols Ã— 2 rows)
 { cols: 2, items: [
-  { label: "â¬š\nâ•±", latex: "\\enclose{updiagonalstrike}{#0}", icon: "updiagonalstrike-enclosure-template-image" },
-{ label: "â¬š\nâ€”", latex: "\\enclose{horizontalstrike}{\\begin{array}{c@{}} \\raisebox{-8px}{#?} \\end{array}}", icon: "crossstrike-enclosure-template-image" },
-  { label: "â¬š\nâ•²", latex: "\\enclose{downdiagonalstrike}{#0}", icon: "downdiagonalstrike-enclosure-template-image" },
-  { label: "â¬š\nâ•³", latex: "\\enclose{updiagonalstrike downdiagonalstrike}{#0}", icon: "diagonal-cross-enclosure-template-image" },
+ { label: "⬚\n╱", latex: "\\enclose{updiagonalstrike}{#0}", icon: "updiagonalstrike-enclosure-template-image", title: "Up Diagonal Strike" },
+{ label: "⬚\n—", latex: "\\enclose{horizontalstrike}{\\begin{array}{c@{}} \\raisebox{-8px}{#?} \\end{array}}", icon: "crossstrike-enclosure-template-image", title: "Horizontal Strike" },
+{ label: "⬚\n╲", latex: "\\enclose{downdiagonalstrike}{#0}", icon: "downdiagonalstrike-enclosure-template-image", title: "Down Diagonal Strike" },
+{ label: "⬚\n╳", latex: "\\enclose{updiagonalstrike downdiagonalstrike}{#0}", icon: "diagonal-cross-enclosure-template-image", title: "Diagonal Cross Strike" },
 ], more: [
-  { label: "â¬š\nâ”‚", latex: "\\enclose{verticalstrike}{#0}", icon: "verticalstrike-enclosure-template-image" },
-  { label: "âˆšâ¬š", latex: "\Root", icon: "curved-root-enclosure-template-image" },
-  { label: "âŠ•\nâ¬š", latex: "\\enclose{horizontalstrike}{\\begin{array}{c@{}} \\raisebox{-8px}{\\enclose{verticalstrike}{\\vphantom{\\rule{0pt}{14px}}#?}} \\end{array}}", icon: "horizontal-vertical-strike-enclosure-template-image" },
+  { label: "⬚\n╱", latex: "\\enclose{updiagonalstrike}{#0}", icon: "updiagonalstrike-enclosure-template-image", title: "Up Diagonal Strike" },
+{ label: "⬚\n—", latex: "\\enclose{horizontalstrike}{\\begin{array}{c@{}} \\raisebox{-8px}{#?} \\end{array}}", icon: "crossstrike-enclosure-template-image", title: "Horizontal Strike" },
+{ label: "⬚\n╲", latex: "\\enclose{downdiagonalstrike}{#0}", icon: "downdiagonalstrike-enclosure-template-image", title: "Down Diagonal Strike" },
+{ label: "⬚\n╳", latex: "\\enclose{updiagonalstrike downdiagonalstrike}{#0}", icon: "diagonal-cross-enclosure-template-image", title: "Diagonal Cross Strike" },
 ], moreCols: 3 },
 ];
 const TAB8_GROUPS = [
   // Section 1: Sigma (Sum)
   { cols: 2, items: [
-    { label: "⬚\nΣ\n⬚", latex: "\\sum\\limits_{#0}^{#?}", icon: "sum-limits-both-template-image" },   // over and under script
-    { label: "Σ⬚\n ⬚", latex: "\\sum\\nolimits_{#0}^{#?}", icon: "sum-right-sup-sub-template-image" },  // subscript and superscript
-    { label: "Σ\n⬚", latex: "\\sum\\limits_{#0}", icon: "sum-limits-under-template-image" },           // under script only
-    { label: "Σ⬚", latex: "\\sum\\nolimits_{#0}", icon: "sum-right-sub-template-image" },           // subscript only
+     { label: "⬚\nΣ\n⬚", latex: "\\sum\\limits_{#0}^{#?}", icon: "sum-limits-both-template-image", title: "Summation with Upper and Lower Limits" },
+{ label: "Σ⬚\n⬚", latex: "\\sum\\nolimits_{#0}^{#?}", icon: "sum-right-sup-sub-template-image", title: "Summation with Superscript and Subscript" },
+{ label: "Σ\n⬚", latex: "\\sum\\limits_{#0}", icon: "sum-limits-under-template-image", title: "Summation with Lower Limit" },
+{ label: "Σ⬚", latex: "\\sum\\nolimits_{#0}", icon: "sum-right-sub-template-image", title: "Summation with Subscript" },
   ]},
   // Section 2: Pi (Product)
   { cols: 2, items: [
-    { label: "⬚\nΠ\n⬚", latex: "\\prod\\limits_{#0}^{#?}", icon: "prod-limits-both-template-image" },   // over and under script
-    { label: "Π⬚\n ⬚", latex: "\\prod\\nolimits_{#0}^{#?}", icon: "prod-right-sup-sub-template-image" },  // subscript and superscript
-    { label: "Π\n⬚", latex: "\\prod\\limits_{#0}", icon: "prod-limits-under-template-image" },           // under script only
-    { label: "Π⬚", latex: "\\prod\\nolimits_{#0}", icon: "prod-right-sub-template-image" },           // subscript only
+   { label: "⬚\nΠ\n⬚", latex: "\\prod\\limits_{#0}^{#?}", icon: "prod-limits-both-template-image", title: "Product with Upper and Lower Limits" },
+{ label: "Π⬚\n⬚", latex: "\\prod\\nolimits_{#0}^{#?}", icon: "prod-right-sup-sub-template-image", title: "Product with Superscript and Subscript" },
+{ label: "Π\n⬚", latex: "\\prod\\limits_{#0}", icon: "prod-limits-under-template-image", title: "Product with Lower Limit" },
+{ label: "Π⬚", latex: "\\prod\\nolimits_{#0}", icon: "prod-right-sub-template-image", title: "Product with Subscript" },
   ]},
   // Section 3: generic big operator (editable symbol + scripts)
   { cols: 2, items: [
-    { label: "⬚\n⬚\n⬚", latex: "\\mathop{#0}\\limits_{#?}^{#?}", icon: "mathop-limits-both-template-image" },   // over and under script
-    { label: "⬚⬚\n ⬚", latex: "\\mathop{#0}\\nolimits_{#?}^{#?}", icon: "mathop-right-sup-sub-template-image" },  // subscript and superscript
-    { label: "⬚\n⬚", latex: "\\mathop{#0}\\limits_{#?}", icon: "mathop-limits-under-template-image" },           // under script only
-    { label: "⬚⬚", latex: "\\mathop{#0}\\nolimits_{#?}", icon: "mathop-right-sub-template-image" },           // subscript only
+   { label: "⬚\n⬚\n⬚", latex: "\\mathop{#0}\\limits_{#?}^{#?}", icon: "mathop-limits-both-template-image", title: "Operator with Upper and Lower Limits" },
+{ label: "⬚⬚\n⬚", latex: "\\mathop{#0}\\nolimits_{#?}^{#?}", icon: "mathop-right-sup-sub-template-image", title: "Operator with Superscript and Subscript" },
+{ label: "⬚\n⬚", latex: "\\mathop{#0}\\limits_{#?}", icon: "mathop-limits-under-template-image", title: "Operator with Lower Limit" },
+{ label: "⬚⬚", latex: "\\mathop{#0}\\nolimits_{#?}", icon: "mathop-right-sub-template-image", title: "Operator with Subscript" },
   ]},
   // Section 4: set/big operators - plain symbols
   { cols: 1, items: [
-    { label: "∩", latex: "\\cap" },
-    { label: "∪", latex: "\\cup" },
-  ], more: [
-    { label: "⊓", latex: "\\sqcap" },
-    { label: "Π", latex: "\\prod" },
-    { label: "Σ", latex: "\\sum" },
-    { label: "⊔", latex: "\\sqcup" },
-    { label: "∐", latex: "\\coprod" },
+    { label: "∩", latex: "\\cap", title: "Intersection" },
+{ label: "∪", latex: "\\cup", title: "Union" },
+], more: [
+{ label: "⊓", latex: "\\sqcap", title: "Square Intersection" },
+{ label: "Π", latex: "\\prod", title: "Product" },
+{ label: "Σ", latex: "\\sum", title: "Summation" },
+{ label: "⊔", latex: "\\sqcup", title: "Square Union" },
+{ label: "∐", latex: "\\coprod", title: "Coproduct" },
   ], moreCols: 3 },
 ];
 const TAB9_GROUPS = [
   // Section 1: Integral basics
   { cols: 2, items: [
-    { label: "∫⬚\n⬚", latex: "\\int_{#0}^{#?}", icon: "integral-bounds-template-image" },
-    { label: "∫⬚\n⬚⬚d⬚", latex: "\\int_{#0}^{#?}#?\\,d#?", icon: "integral-bounds-differential-template-image" },
-    { label: "∫\n⬚", latex: "\\int_{#0}", icon: "integral-lower-bound-template-image" },
-    { label: "∫\n⬚⬚d⬚", latex: "\\int_{#0}#?\\,d#?", icon: "integral-lower-bound-differential-template-image" },
+    { label: "∫⬚\n⬚", latex: "\\int_{#0}^{#?}", icon: "integral-bounds-template-image", title: "Integral with Upper and Lower Limits" },
+{ label: "∫⬚\n⬚⬚d⬚", latex: "\\int_{#0}^{#?}#?\\,d#?", icon: "integral-bounds-differential-template-image", title: "Integral with Limits and Differential" },
+{ label: "∫\n⬚", latex: "\\int_{#0}", icon: "integral-lower-bound-template-image", title: "Integral with Lower Limit" },
+{ label: "∫\n⬚⬚d⬚", latex: "\\int_{#0}#?\\,d#?", icon: "integral-lower-bound-differential-template-image", title: "Integral with Lower Limit and Differential" },
   ]},
 
   // Section 2: Derivatives
   { cols: 2, items: [
-    { label: "d", latex: "d" },
-    { label: "d⬚\nd⬚", latex: "\\frac{d#0}{d#?}" },
-    { label: "∂", latex: "\\partial" },
-    { label: "∂⬚\n∂⬚", latex: "\\frac{\\partial#0}{\\partial#?}" },
+ { label: "d", latex: "d", title: "Differential" },
+{ label: "d⬚\nd⬚", latex: "\\frac{d#0}{d#?}", title: "Derivative" },
+{ label: "∂", latex: "\\partial", title: "Partial Differential" },
+{ label: "∂⬚\n∂⬚", latex: "\\frac{\\partial#0}{\\partial#?}", title: "Partial Derivative" },
   ]},
 
   // Section 3: Limits
   { cols: 1, items: [
-    { label: "lim\n⬚→∞", latex: "\\lim_{#0 \\to \\infty}" },
-    { label: "lim\n⬚", latex: "\\lim_{#0}" },
+    { label: "lim\n⬚→∞", latex: "\\lim_{#0 \\to \\infty}",title:"Limit to infinity" },
+    { label: "lim\n⬚", latex: "\\lim_{#0}", title:"limit with under script" },
   ]},
 
   // Section 4: Vector calculus
   { cols: 2, items: [
-    { label: "∇×⬚", latex: "\\nabla \\times #0" },
-    { label: "∇⬚", latex: "\\nabla #0" },
-    { label: "∇·⬚", latex: "\\nabla \\cdot #0" },
-    { label: "Δ⬚", latex: "\\Delta #0" },
+    { label: "∇×⬚", latex: "\\nabla \\times #0", title:"curl" },
+    { label: "∇⬚", latex: "\\nabla #0", title:"Gradient" },
+    { label: "∇·⬚", latex: "\\nabla \\cdot #0",title:"Divergence" },
+    { label: "Δ⬚", latex: "\\Delta #0",title:"Laplacian" },
   ]},
 
   // Section 5: Integral symbol variants
   { cols: 2, items: [
-    { label: "∫", latex: "\\int" },
-    { label: "∬", latex: "\\iint" },
-    { label: "∮", latex: "\\oint" },
-    { label: "∯", latex: "\\oiint" },
-  ], more: [
-    { label: "∰", latex: "\\oiiint" },
-    { label: "∭", latex: "\\iiint" },
+    { label: "∫", latex: "\\int", title: "Integral" },
+{ label: "∬", latex: "\\iint", title: "Double Integral" },
+{ label: "∮", latex: "\\oint", title: "Contour Integral" },
+{ label: "∯", latex: "\\oiint", title: "Surface Integral" },
+], more: [
+{ label: "∰", latex: "\\oiiint", title: " Volume Integral" },
+{ label: "∭", latex: "\\iiint", title: "Triple Integral" },
   ], moreCols: 2 },
 
   // Section 6: Trig / log functions
   { cols: 3, items: [
-    { label: "sin", latex: "\\sin(#?)" },
-    { label: "cos", latex: "\\cos(#?)" },
-    { label: "tan", latex: "\\tan(#?)" },
-    { label: "log", latex: "\\log(#?)" },
-    { label: "log⬚", latex: "\\log_{#0}(#?)" },
-    { label: "ln", latex: "\\ln(#?)" },
-  ], more: [
-    { label: "csc", latex: "\\csc(#?)" }, { label: "sec", latex: "\\sec(#?)" }, { label: "cot", latex: "\\cot(#?)" },
-    { label: "sin⁻¹", latex: "\\sin^{-1}(#?)" }, { label: "cos⁻¹", latex: "\\cos^{-1}(#?)" }, { label: "tan⁻¹", latex: "\\tan^{-1}(#?)" },
+    { label: "sin", latex: "\\sin(#?)", title: "Sine" },
+{ label: "cos", latex: "\\cos(#?)", title: "Cosine" },
+{ label: "tan", latex: "\\tan(#?)", title: "Tangent" },
+{ label: "log", latex: "\\log(#?)", title: "Logarithm" },
+{ label: "log⬚", latex: "\\log_{#0}(#?)", title: "Logarithm with Base" },
+{ label: "ln", latex: "\\ln(#?)", title: "Natural Logarithm" },
+], more: [
+{ label: "csc", latex: "\\csc(#?)", title: "Cosecant" },
+{ label: "sec", latex: "\\sec(#?)", title: "Secant" },
+{ label: "cot", latex: "\\cot(#?)", title: "Cotangent" },
+{ label: "sin⁻¹", latex: "\\sin^{-1}(#?)", title: "Inverse Sine" },
+{ label: "cos⁻¹", latex: "\\cos^{-1}(#?)", title: "Inverse Cosine" },
+{ label: "tan⁻¹", latex: "\\tan^{-1}(#?)", title: "Inverse Tangent" },
   ], moreCols: 3 },
 ];
 
@@ -2028,7 +2070,7 @@ export default function MathRibbon({ onInsert, onCommand }) {
                       type="button"
                        className={`mr-btn${item.pinned ? " pinned" : ""}${isPreview ? " mr-btn-preview" : ""}`}
                       style={getItemButtonStyle(displayItem)}
-                      title={item.latex || item.matrixType || item.command || ""}
+                      title={item.title || item.latex || item.matrixType || item.command || ""}
                       onMouseDown={e => {
                         e.preventDefault();
                         const selectedItem = item.pinned ? lastUsed || item : item;
@@ -2118,7 +2160,7 @@ export default function MathRibbon({ onInsert, onCommand }) {
                     type="button"
                     className="mr-btn"
                     style={getItemButtonStyle(item)}
-                    title={item.latex}
+                    title={item.title || item.latex}
                     onMouseDown={e => { e.preventDefault(); handleItemClick(item, e); }}
                   >
                     {renderItemContent(item)}
