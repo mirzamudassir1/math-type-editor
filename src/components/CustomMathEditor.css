@@ -252,9 +252,9 @@
   background: #ffffff;
   border: 1px solid #b2c4d0;
   border-radius: 4px;
-  margin: 1px 12px;
+  margin: 8px 12px 6px;
   flex: 1;
-  min-height: 100px;
+  min-height: 160px;
   overflow: auto;
   display: block;
   box-sizing: border-box;
@@ -405,7 +405,7 @@ math-field.cme-main-mathfield::part(menu-toggle) {
   bottom: 24px;
   right: 24px;
   width: 620px;
-  height: 340px;
+  height: 420px;
   background: #f4f7f9;
   border: 1px solid #99b1c1;
   border-radius: 6px;
@@ -483,28 +483,42 @@ math-field.cme-main-mathfield::part(menu-toggle) {
   cursor: pointer;
 }
 
+.cme-popup-close::before,
+.cme-popup-header:not(:has(.cme-popup-close))::after {
+  content: none;
+  display: none;
+}
+
 .cme-popup-footer {
-  padding: 10px 12px;
+  padding: 8px 12px 12px;
   background: #f4f7f9;
  
   display: flex;
+  align-items: center;
   justify-content: flex-start; /* Left-aligned buttons as shown in image */
-  gap: 8px;
+  gap: 10px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   box-sizing: border-box;
+}
+
+.cme-insert-btn,
+.cme-cancel-btn {
+  box-sizing: border-box;
+  width: 90px;
+  height: 34px;
+  padding: 0 14px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
 }
 
 .cme-insert-btn {
   background: #5b7b90;
   color: #ffffff;
   border: 1px solid #4a687c;
-  padding: 6px 20px;
-  border-radius: 4px;
-  font-weight: 500;
-  font-size: 12px;
-  cursor: pointer;
-  transition: background 0.15s;
 }
 
 .cme-insert-btn:hover {
@@ -515,12 +529,6 @@ math-field.cme-main-mathfield::part(menu-toggle) {
   background: #e0e0e0;
   color: #333333;
   border: 1px solid #b8b8b8;
-  padding: 6px 20px;
-  border-radius: 4px;
-  font-weight: 500;
-  font-size: 12px;
-  cursor: pointer;
-  transition: background 0.15s, border-color 0.15s;
 }
 
 .cme-cancel-btn:hover {

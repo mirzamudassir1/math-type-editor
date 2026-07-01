@@ -12,7 +12,7 @@ const TAB1_GROUPS = [
     { label: "⬚_⬚", latex: "\\frac{#0}{#?}", icon: "fraction-template-image" },
     { label: "√⬚", latex: "\\sqrt{#0}", icon: "sqrt-template-image" },
     { label: "⬚⁄⬚", latex: "#0/#?", icon: "slash-fraction-template-image" },
-    { label: "ⁿ√⬚", latex: "\\sqrt[#?]{#0}", icon: "nth-root-template-image" },
+    { label: "ⁿ√⬚", latex: "\\sqrt[#?\\;]{#0}", icon: "nth-root-template-image" },
   ]},
   { cols: 1, groupClass: "mr-cases-group", cellWidth: 40, cellGap: 1, items: [
     { label: "⬚ⁿ", latex: "#0^{#?}", icon: "superscript-template-image" },
@@ -66,7 +66,7 @@ const TAB2_GROUPS = [
   ], more: [
     { label: "\\", latex: "\\backslash" }, { label: "‵", latex: "\\backprime" }, { label: "∓", latex: "\\mp" },
   ]},
-  { cols: 3, groupClass: "mr-funcs-scripts-group", cellWidth: 32, cellGap: 1, items: [
+  { cols: 3, groupClass: "mr-funcs-scripts-group", cellWidth: 23, cellGap: 0, items: [
     { label: "π", latex: "\\pi" }, { label: "∂", latex: "\\partial" }, { label: "°", latex: "\\degree" },
     { label: "∞", latex: "\\infty" }, { label: "Δ", latex: "\\Delta" }, { label: "′", latex: "'" },
     { label: "∅", latex: "\\emptyset" }, { label: "∇", latex: "\\nabla" }, { label: "″", latex: "''" },
@@ -78,11 +78,11 @@ const TAB2_GROUPS = [
     { label: "∼", latex: "\\sim" }, { label: "≈", latex: "\\approx" },
     { label: "≃", latex: "\\simeq" }, { label: "≅", latex: "\\cong" },
   ], more: [
-    { label: "≠", latex: "\\neq" }, { label: "≭", latex: "\\nasymp" },
+    { label: "≠", latex: "\\neq" }, { label: "≉", latex: "\\not\\approx" },
     { label: "≢", latex: "\\not\\equiv" }, null,
     { label: "≁", latex: "\\nsim" }, null,
   ], moreCols: 2 },
-  { cols: 2, groupClass: "mr-funcs-element-scripts-group", cellWidth: 32, cellGap: 1, items: [
+  { cols: 2, groupClass: "mr-funcs-element-scripts-group", cellWidth: 23, cellGap: 0, items: [
     { label: ">", latex: ">" }, { label: "<", latex: "<" },
     { label: "≥", latex: "\\geq" }, { label: "≤", latex: "\\leq" },
     { label: "≫", latex: "\\gg" }, { label: "≪", latex: "\\ll" },
@@ -114,7 +114,7 @@ const TAB2_GROUPS = [
     { label: "∡", latex: "\\measuredangle" }, null,
     { label: "∢", latex: "\\sphericalangle" }, null,
   ], moreCols: 2 },
-  { cols: 1, groupClass: "mr-funcs-braces-group", cellWidth: 34, cellGap: 1, items: [
+  { cols: 1, groupClass: "mr-funcs-braces-group", cellWidth: 23, cellGap: 0, items: [
     { label: "□", latex: "\\square" }, { label: "△", latex: "\\triangle" }, { label: "○", latex: "\\bigcirc" },
   ], more: [] },
   { cols: 1, items: [
@@ -175,8 +175,8 @@ const TAB3_GROUPS = [
 { label: "⥃̲", latex: "\\underset{#?}{\\overset{\\rightarrow}{\\leftarrow}}", icon: "short-right-over-left-under-template-image" },
 { label: "⥃̲̅", latex: "\\overset{#?}{\\underset{#?}{\\overset{\\rightarrow}{\\leftarrow}}}", icon: "short-right-over-left-over-under-template-image" }, 
 
-  ], moreCols: 11, dropdownClass: "mr-dropdown-script-arrows", moreCellWidth: 34, moreCellGap: 3 },
-  { cols: 2, groupClass: "mr-tab3-accent-group", cellWidth: 34, cellGap: 2, items: [
+  ], moreCols: 11, dropdownClass: "mr-dropdown-script-arrows", moreCellWidth: 32, moreCellGap: 2 },
+  { cols: 2, groupClass: "mr-tab3-accent-group", cellWidth: 32, cellGap: 2, items: [
     { label: "→\n⬚", latex: "\\xrightarrow[#?]{}", icon: "xrightarrow-under-custom-template-image" }, 
     { label: "↔\n⬚", latex: "\\xleftrightarrow[#?]{}", icon: "xleftrightarrow-under-custom-template-image" },
     { label: "⇀\n⬚", latex: "\\overrightharpoon{#0}", icon: "overrightharpoon-custom-template-image" }, 
@@ -236,7 +236,7 @@ const TAB4_GROUPS = [
 
 const TAB5_GROUPS = [
   { type: "inline-matrix-picker" },
-  { cols: 2, items: [
+  { cols: 3, groupClass: "mr-tab5-matrix-group", cellWidth: 34, cellGap: 1, items: [
     { label: "□\n□\n□", latex: "\\begin{matrix} #? \\\\ #? \\\\ #? \\end{matrix}", icon: "matrix-vertical-plain-template-image" },
     { label: "[□\n□]", latex: "\\left[\\vphantom{\\begin{array}{c}X\\\\[2pt]X\\end{array}}\\begin{matrix} #? \\\\[-1pt] #? \\end{matrix}\\right]", icon: "matrix-vertical-square-template-image" },
     { label: "(□\n□)", latex: "\\left(\\vphantom{\\begin{array}{c}X\\\\[2pt]X\\end{array}}\\begin{matrix} #? \\\\[-1pt] #? \\end{matrix}\\right)", icon: "matrix-vertical-round-template-image" },
@@ -244,19 +244,19 @@ const TAB5_GROUPS = [
     { label: "[□ & □]", latex: "\\left[\\begin{matrix} #? \\, #? \\end{matrix}\\right]", icon: "matrix-horizontal-square-template-image" },
     { label: "(□ & □)", latex: "\\left(\\begin{matrix} #? \\, #? \\end{matrix}\\right)", icon: "matrix-horizontal-round-template-image" },
   ]},
-  { cols: 2, items: [
+  { cols: 2, groupClass: "mr-tab5-cases-group", cellWidth: 34, cellGap: 1, items: [
     { label: "{", latex: "\\left\\{\\begin{matrix} \\rule[-0.35em]{0pt}{1.9em}#? \\\\[4pt] \\rule[-0.35em]{0pt}{1.9em}#? \\end{matrix}\\right.", icon: "cases-left-template-image" },
     { label: "f(x)", latex: "\\left\\{\\begin{matrix} \\rule[-0.35em]{0pt}{1.9em}#?, \\, #? \\\\[4pt] \\rule[-0.35em]{0pt}{1.9em}#?, \\, #? \\end{matrix}\\right.", icon: "cases-piecewise-template-image" },
     { label: "}", latex: "\\left.\\vphantom{\\begin{array}{c}X\\\\[2pt]X\\end{array}}\\begin{matrix} #? \\\\ #? \\end{matrix}\\right\\}", icon: "cases-right-template-image" },
     { label: "=", latex: "\\begin{aligned} #? &= #? \\\\ #? &= #? \\end{aligned}", icon: "aligned-equations-template-image" },
   ]},
-  { cols: 2, items: [
+  { cols: 2, groupClass: "mr-tab5-dots-group", cellWidth: 32, cellGap: 1, items: [
     { label: "⋮", latex: "\\vdots" },
     { label: "⋰", latex: "⋰" },
     { label: "…", latex: "\\ldots" },
     { label: "⋱", latex: "\\ddots" },
   ]},
-  { cols: 1, items: [
+  { cols: 1, groupClass: "mr-tab5-array-group", cellWidth: 34, cellGap: 1, items: [
     { label: "+", latex: "\\frac{\\begin{array}{r}#?\\\\+\\,#?\\end{array}}{\\quad#?}", icon: "addition-array-template-image" },
     { label: "⟌", latex: "#?\\, ) \\!\\! \\overset{\\displaystyle #?}{\\overline{\\vphantom{1}\\;\\;#?\\;}}", icon: "long-division-template-image" },
   ], more: [
@@ -281,7 +281,7 @@ const TAB6_GROUPS = [
   // Section 2 â€” Roots
   { cols: 1, groupClass: "mr-funcs-roots-group", cellWidth: 34, cellGap: 1, items: [
     { label: "√⬚", latex: "\\sqrt{#0}", icon: "sqrt-template-image" },                                // square root
-    { label: "ⁿ√⬚", latex: "\\sqrt[#?]{#0}", icon: "nth-root-template-image" },                           // root (nth root)
+    { label: "ⁿ√⬚", latex: "\\sqrt[#?\\;]{#0}", icon: "nth-root-template-image" },                           // root (nth root)
   ]},
 
   // Section 3 â€” Scripts
@@ -478,7 +478,6 @@ const TABS = [
   { id: "delims",   icon: "(0)",   groups: TAB7_GROUPS },
   { id: "bigops",   icon: "ΣU",   groups: TAB8_GROUPS },
   { id: "calc",     icon: "∫lim", groups: TAB9_GROUPS },
-  { id: "chem",     icon: "⚗",    groups: [] },
 ];
 
 const PERIODIC_ELEMENTS = [
@@ -492,6 +491,18 @@ const PERIODIC_ELEMENTS = [
   ["La",9,3,"lanth"], ["Ce",9,4,"lanth"], ["Pr",9,5,"lanth"], ["Nd",9,6,"lanth"], ["Pm",9,7,"lanth"], ["Sm",9,8,"lanth"], ["Eu",9,9,"lanth"], ["Gd",9,10,"lanth"], ["Tb",9,11,"lanth"], ["Dy",9,12,"lanth"], ["Ho",9,13,"lanth"], ["Er",9,14,"lanth"], ["Tm",9,15,"lanth"], ["Yb",9,16,"lanth"], ["Lu",9,17,"lanth"],
   ["Ac",10,3,"act"], ["Th",10,4,"act"], ["Pa",10,5,"act"], ["U",10,6,"act"], ["Np",10,7,"act"], ["Pu",10,8,"act"], ["Am",10,9,"act"], ["Cm",10,10,"act"], ["Bk",10,11,"act"], ["Cf",10,12,"act"], ["Es",10,13,"act"], ["Fm",10,14,"act"], ["Md",10,15,"act"], ["No",10,16,"act"], ["Lr",10,17,"act"],
 ];
+
+const PERIODIC_ELEMENT_NAMES = {
+  H: "Hydrogen", He: "Helium",
+  Li: "Lithium", Be: "Beryllium", B: "Boron", C: "Carbon", N: "Nitrogen", O: "Oxygen", F: "Fluorine", Ne: "Neon",
+  Na: "Sodium", Mg: "Magnesium", Al: "Aluminium", Si: "Silicon", P: "Phosphorus", S: "Sulfur", Cl: "Chlorine", Ar: "Argon",
+  K: "Potassium", Ca: "Calcium", Sc: "Scandium", Ti: "Titanium", V: "Vanadium", Cr: "Chromium", Mn: "Manganese", Fe: "Iron", Co: "Cobalt", Ni: "Nickel", Cu: "Copper", Zn: "Zinc", Ga: "Gallium", Ge: "Germanium", As: "Arsenic", Se: "Selenium", Br: "Bromine", Kr: "Krypton",
+  Rb: "Rubidium", Sr: "Strontium", Y: "Yttrium", Zr: "Zirconium", Nb: "Niobium", Mo: "Molybdenum", Tc: "Technetium", Ru: "Ruthenium", Rh: "Rhodium", Pd: "Palladium", Ag: "Silver", Cd: "Cadmium", In: "Indium", Sn: "Tin", Sb: "Antimony", Te: "Tellurium", I: "Iodine", Xe: "Xenon",
+  Cs: "Caesium", Ba: "Barium", Hf: "Hafnium", Ta: "Tantalum", W: "Tungsten", Re: "Rhenium", Os: "Osmium", Ir: "Iridium", Pt: "Platinum", Au: "Gold", Hg: "Mercury", Tl: "Thallium", Pb: "Lead", Bi: "Bismuth", Po: "Polonium", At: "Astatine", Rn: "Radon",
+  Fr: "Francium", Ra: "Radium", Rf: "Rutherfordium", Db: "Dubnium", Sg: "Seaborgium", Bh: "Bohrium", Hs: "Hassium", Mt: "Meitnerium", Ds: "Darmstadtium", Rg: "Roentgenium", Cn: "Copernicium", Nh: "Nihonium", Fl: "Flerovium", Mc: "Moscovium", Lv: "Livermorium", Ts: "Tennessine", Og: "Oganesson",
+  La: "Lanthanum", Ce: "Cerium", Pr: "Praseodymium", Nd: "Neodymium", Pm: "Promethium", Sm: "Samarium", Eu: "Europium", Gd: "Gadolinium", Tb: "Terbium", Dy: "Dysprosium", Ho: "Holmium", Er: "Erbium", Tm: "Thulium", Yb: "Ytterbium", Lu: "Lutetium",
+  Ac: "Actinium", Th: "Thorium", Pa: "Protactinium", U: "Uranium", Np: "Neptunium", Pu: "Plutonium", Am: "Americium", Cm: "Curium", Bk: "Berkelium", Cf: "Californium", Es: "Einsteinium", Fm: "Fermium", Md: "Mendelevium", No: "Nobelium", Lr: "Lawrencium",
+};
 
 const BOX_CHAR = "â¬š";
 
@@ -771,30 +782,24 @@ function renderIcon(icon) {
       return arrowTemplateIcon("left", true, true);
     case "leftrightarrow-over-template-image":
       return (
-        <svg {...svgProps} className="mr-template-svg mr-script-arrow-template-svg" width="64" height="64" viewBox="0 0 64 64">
-          <rect x="26" y="4" width="12" height="22" fill="none" stroke="#0a8f17" strokeWidth="2.5" rx="1" />
-          <line x1="8" y1="42" x2="56" y2="42" stroke="#000" strokeWidth="2.8" strokeLinecap="round" />
-          <polyline points="16,34 8,42 16,50" fill="none" stroke="#000" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" />
-          <polyline points="48,34 56,42 48,50" fill="none" stroke="#000" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" />
+        <svg {...svgProps} className="mr-template-svg mr-script-arrow-template-svg" width="120" height="120" viewBox="0 0 120 120">
+          <rect x="51" y="10" width="18" height="30" fill="none" stroke="#6fb27a" strokeWidth="4" />
+          <path d="M25 75 H95 M35 65 L25 75 L35 85 M85 65 L95 75 L85 85" fill="none" stroke="#111" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       );
     case "leftrightarrow-under-template-image":
       return (
-        <svg {...svgProps} className="mr-template-svg mr-script-arrow-template-svg" width="64" height="64" viewBox="0 0 64 64">
-          <line x1="8" y1="24" x2="56" y2="24" stroke="#000" strokeWidth="2.8" strokeLinecap="round" />
-          <polyline points="16,16 8,24 16,32" fill="none" stroke="#000" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" />
-          <polyline points="48,16 56,24 48,32" fill="none" stroke="#000" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" />
-          <rect x="26" y="38" width="12" height="22" fill="none" stroke="#0a8f17" strokeWidth="2.5" rx="1" />
+        <svg {...svgProps} className="mr-template-svg mr-script-arrow-template-svg" width="120" height="120" viewBox="0 0 120 120">
+          <path d="M25 46 H95 M35 36 L25 46 L35 56 M85 36 L95 46 L85 56" fill="none" stroke="#111" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          <rect x="51" y="78" width="18" height="30" fill="none" stroke="#6fb27a" strokeWidth="4" />
         </svg>
       );
     case "leftrightarrow-over-under-template-image":
       return (
-        <svg {...svgProps} className="mr-template-svg mr-script-arrow-template-svg" width="64" height="64" viewBox="0 0 64 64">
-          <rect x="26" y="4" width="12" height="22" fill="none" stroke="#0a8f17" strokeWidth="2.5" rx="1" />
-          <line x1="8" y1="32" x2="56" y2="32" stroke="#000" strokeWidth="2.8" strokeLinecap="round" />
-          <polyline points="16,24 8,32 16,40" fill="none" stroke="#000" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" />
-          <polyline points="48,24 56,32 48,40" fill="none" stroke="#000" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" />
-          <rect x="26" y="38" width="12" height="22" fill="none" stroke="#0a8f17" strokeWidth="2.5" rx="1" />
+        <svg {...svgProps} className="mr-template-svg mr-script-arrow-template-svg" width="120" height="120" viewBox="0 0 120 120">
+          <rect x="51" y="10" width="18" height="30" fill="none" stroke="#6fb27a" strokeWidth="4" />
+          <path d="M25 60 H95 M35 50 L25 60 L35 70 M85 50 L95 60 L85 70" fill="none" stroke="#111" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          <rect x="51" y="80" width="18" height="30" fill="none" stroke="#6fb27a" strokeWidth="4" />
         </svg>
       );
     case "leftrightarrows-over-template-image":
@@ -942,27 +947,27 @@ function renderIcon(icon) {
       );
     case "short-right-over-left-over-template-image":
       return (
-        <svg {...svgProps} className="mr-template-svg mr-script-arrow-template-svg" width="64" height="64" viewBox="0 0 64 64">
-          <rect x="27" y="4" width="9" height="17" rx="1" fill="none" stroke="#1b9b32" strokeWidth="2" />
-          <path d="M25 29H43M38 24L43 29L38 34" fill="none" stroke="#000" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M45 41H15M21 35L15 41L21 47" fill="none" stroke="#000" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+        <svg {...svgProps} className="mr-template-svg mr-script-arrow-template-svg" width="120" height="120" viewBox="0 0 120 120">
+          <rect x="51" y="10" width="18" height="30" fill="none" stroke="#6fb27a" strokeWidth="4" />
+          <path d="M45 58 H92 M82 48 L92 58 L82 68" fill="none" stroke="#111" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M75 84 H28 M38 74 L28 84 L38 94" fill="none" stroke="#111" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       );
     case "short-right-over-left-under-template-image":
       return (
-        <svg {...svgProps} className="mr-template-svg mr-script-arrow-template-svg" width="64" height="64" viewBox="0 0 64 64">
-          <path d="M25 20H43M38 15L43 20L38 25" fill="none" stroke="#000" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M45 32H15M21 26L15 32L21 38" fill="none" stroke="#000" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-          <rect x="27" y="43" width="9" height="17" rx="1" fill="none" stroke="#1b9b32" strokeWidth="2" />
+        <svg {...svgProps} className="mr-template-svg mr-script-arrow-template-svg" width="120" height="120" viewBox="0 0 120 120">
+          <path d="M45 44 H92 M82 34 L92 44 L82 54" fill="none" stroke="#111" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M75 70 H28 M38 60 L28 70 L38 80" fill="none" stroke="#111" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          <rect x="51" y="82" width="18" height="30" fill="none" stroke="#6fb27a" strokeWidth="4" />
         </svg>
       );
     case "short-right-over-left-over-under-template-image":
       return (
-        <svg {...svgProps} className="mr-template-svg mr-script-arrow-template-svg" width="64" height="64" viewBox="0 0 64 64">
-          <rect x="27" y="4" width="9" height="17" rx="1" fill="none" stroke="#1b9b32" strokeWidth="2" />
-          <path d="M25 20H43M38 15L43 20L38 25" fill="none" stroke="#000" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M45 32H15M21 26L15 32L21 38" fill="none" stroke="#000" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-          <rect x="27" y="43" width="9" height="17" rx="1" fill="none" stroke="#1b9b32" strokeWidth="2" />
+        <svg {...svgProps} className="mr-template-svg mr-script-arrow-template-svg" width="120" height="120" viewBox="0 0 120 120">
+          <rect x="51" y="10" width="18" height="30" fill="none" stroke="#6fb27a" strokeWidth="4" />
+          <path d="M45 52 H92 M82 42 L92 52 L82 62" fill="none" stroke="#111" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M75 76 H28 M38 66 L28 76 L38 86" fill="none" stroke="#111" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          <rect x="51" y="84" width="18" height="30" fill="none" stroke="#6fb27a" strokeWidth="4" />
         </svg>
       );
     case "matrix-vertical-plain-template-image":
@@ -1110,7 +1115,7 @@ function renderIcon(icon) {
               strokeLinecap="round"
               strokeLinejoin="round"
             />
-            <rect x="8" y="13" width="10" height="18" stroke="#7BC67E" strokeWidth="3" />
+            <rect x="4" y="8" width="8" height="14" stroke="#7BC67E" strokeWidth="2.5" />
             <rect x="37" y="18" width="14" height="26" stroke="#008A1E" strokeWidth="3" />
           </g>
         </svg>
@@ -2072,21 +2077,26 @@ export default function MathRibbon({ onInsert, onCommand }) {
         >
           {openGroupData.type === "periodic-table" ? (
             <div className="mr-periodic">
-              {PERIODIC_ELEMENTS.map(([symbol, row, col, category]) => (
-                <button
-                  key={symbol}
-                  type="button"
-                  className={`mr-pt-el mr-pt-${category}`}
-                  style={{ gridRow: row, gridColumn: col }}
-                  title={symbol}
-                  onMouseDown={e => {
-                    e.preventDefault();
-                    handleItemClick({ latex: `\\text{${symbol}}` });
-                  }}
-                >
-                  {symbol}
-                </button>
-              ))}
+              {PERIODIC_ELEMENTS.map(([symbol, row, col, category]) => {
+                const elementName = PERIODIC_ELEMENT_NAMES[symbol] || symbol;
+
+                return (
+                  <button
+                    key={symbol}
+                    type="button"
+                    className={`mr-pt-el mr-pt-${category}`}
+                    style={{ gridRow: row, gridColumn: col }}
+                    title={elementName}
+                    aria-label={`Insert ${elementName}`}
+                    onMouseDown={e => {
+                      e.preventDefault();
+                      handleItemClick({ latex: `\\text{${symbol}}` });
+                    }}
+                  >
+                    {symbol}
+                  </button>
+                );
+              })}
             </div>
           ) : (
             <div

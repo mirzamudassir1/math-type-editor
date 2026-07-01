@@ -375,7 +375,7 @@ const CustomTextEditor = forwardRef(function CustomTextEditor(
         editorRef.current?.focus();
       });
     },
-    [emitChange]
+    [emitChange, onMathEdit]
   );
 
   const applyValue = useCallback(

@@ -83,7 +83,7 @@ const MATH_GROUPS = [
       { label: "xⁿ", insert: "#0^{#?}" },
       { label: "xₙ", insert: "#0_{#?}" },
       { label: "√x", insert: "\\sqrt{#0}" },
-      { label: "ⁿ√x", insert: "\\sqrt[#?]{#0}" },
+      { label: "ⁿ√x", insert: "\\sqrt[#?\\;]{#0}" },
       { label: "()", insert: "\\left(#0\\right)" },
       { label: "[]", insert: "\\left[#0\\right]" },
       { label: "|x|", insert: "\\left|#0\\right|" },
@@ -322,6 +322,7 @@ const CHEM_GROUPS = [
 export default function CustomMathEditor({ value = "", onChange, placeholder = "Enter text here..." }) {
   const [mode, setMode] = useState("math");       // "math" | "chem"
   const [isEditorOpen, setIsEditorOpen] = useState(false);
+  const [editingMath, setEditingMath] = useState(null);
 
   const mainTextEditorRef = useRef(null);
   const popupMfRef = useRef(null);
@@ -391,12 +392,30 @@ export default function CustomMathEditor({ value = "", onChange, placeholder = "
   }, [isEditorOpen]);
 
   /* ── Insert symbol / template into popup math-field ── */
+  const setPopupValue = useCallback((nextValue) => {
+    const popupMf = popupMfRef.current;
+    if (!popupMf) return;
+    if (popupMf.setValue) popupMf.setValue(nextValue || "", { silenceNotifications: true });
+    else popupMf.value = nextValue || "";
+  }, []);
+
   const insertAtCursor = useCallback((insertText) => {
     const popupMf = popupMfRef.current;
     if (!popupMf) return;
     popupMf.focus();
     popupMf.executeCommand(["insert", insertText]);
   }, []);
+
+  useEffect(() => {
+    if (!isEditorOpen || !editingMath) return;
+    const nextValue = editingMath.isChem
+      ? unwrapChemValue(editingMath.latex)
+      : editingMath.latex;
+    requestAnimationFrame(() => {
+      setPopupValue(nextValue);
+      popupMfRef.current?.focus();
+    });
+  }, [editingMath, isEditorOpen, setPopupValue]);
 
   const handleRibbonCommand = useCallback((command, anchorPosition) => {
     const popupMf = popupMfRef.current;
@@ -438,12 +457,20 @@ export default function CustomMathEditor({ value = "", onChange, placeholder = "
   const toggleEditor = (newMode) => {
     if (isEditorOpen && mode === newMode) {
       setIsEditorOpen(false);
+      setEditingMath(null);
       requestAnimationFrame(() => mainTextEditorRef.current?.focus());
       return;
     }
+    setEditingMath(null);
     setMode(newMode);
     setIsEditorOpen(true);
   };
+
+  const handleMathEdit = useCallback(({ mf, latex, isChem }) => {
+    setEditingMath({ mf, latex, isChem });
+    setMode(isChem ? "chem" : "math");
+    setIsEditorOpen(true);
+  }, []);
 
   /* ── Insert from popup into main editor ── */
   const handleInsert = () => {
@@ -460,18 +487,27 @@ export default function CustomMathEditor({ value = "", onChange, placeholder = "
       if (popupMf.setValue) popupMf.setValue("");
       else popupMf.value = "";
       setIsEditorOpen(false);
+      setEditingMath(null);
       return;
     }
 
-    mainTextEditor.insertMath(latex);
+    if (editingMath?.mf?.isConnected) {
+      mainTextEditor.updateMath(editingMath.mf, latex);
+    } else {
+      mainTextEditor.insertMath(latex);
+    }
 
     if (popupMf.setValue) popupMf.setValue("");
     else popupMf.value = "";
+    setEditingMath(null);
 
     requestAnimationFrame(() => mainTextEditor.focus());
   };
 
-  const handleClose = () => setIsEditorOpen(false);
+  const handleClose = () => {
+    setIsEditorOpen(false);
+    setEditingMath(null);
+  };
 
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const dragStateRef = useRef(null);
@@ -514,6 +550,7 @@ export default function CustomMathEditor({ value = "", onChange, placeholder = "
           placeholder={placeholder}
           onMathType={() => toggleEditor("math")}
           onChemType={() => toggleEditor("chem")}
+          onMathEdit={handleMathEdit}
           mathTypeActive={isEditorOpen && mode === "math"}
           chemTypeActive={isEditorOpen && mode === "chem"}
         />
@@ -630,11 +667,11 @@ export default function CustomMathEditor({ value = "", onChange, placeholder = "
 
           {/* cancel and insert div */}
           <div className="cme-popup-footer">
+            <button type="button" className="cme-insert-btn" onClick={handleInsert}>
+              {editingMath ? "Update" : "Insert"}
+            </button>
             <button type="button" className="cme-cancel-btn" onClick={handleClose}>
               Cancel
-            </button>
-            <button type="button" className="cme-insert-btn" onClick={handleInsert}>
-              Insert
             </button>
           </div>
 

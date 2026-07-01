@@ -10,23 +10,27 @@
 .mr-tabs {
   display: flex;
   background: #355269;
-  padding: 3px 4px 0;
-  gap: 1px;
-  min-height: 30px;
+  padding: 4px 6px 0;
+  gap: 2px;
+  min-height: 34px;
   box-sizing: border-box;
 }
 
 .mr-tab {
+  box-sizing: border-box;
   border: none;
   background: transparent;
   color: #d7e2ea;
   font-size: 13px;
-  height: 27px;
-  min-width: 43px;
-  padding: 0 8px;
+  width: 50px;
+  height: 30px;
+  padding: 0;
   cursor: pointer;
   border-radius: 5px 5px 0 0;
   line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .mr-tab.active {
@@ -39,14 +43,14 @@
 .mr-groups {
   display: flex;
   flex-wrap: nowrap;
-  align-items: center;
+  align-items: stretch;
   background: linear-gradient(180deg, #eef3f7 0%, #dbe4ec 100%);
   border-bottom: 1px solid #b9c5cf;
-  padding: 7px 5px 6px;
+  padding: 6px;
   overflow-x: auto;
   overflow-y: hidden;
   max-width: 100%;
-  height: 104px;
+  height: 96px;
   box-sizing: border-box;
   scrollbar-width: thin;
 }
@@ -54,10 +58,11 @@
 .mr-group {
   position: relative;
   display: flex;
-  align-items: flex-start;
-  min-height: 88px;
-  padding: 0 10px 0 9px;
+  align-items: center;
+  min-height: 82px;
+  padding: 0 8px;
   border-right: 1px solid #c3cdd6;
+  box-sizing: border-box;
 }
 
 .mr-group:last-child {
@@ -75,6 +80,11 @@
   align-content: flex-start;
   justify-content: flex-start;
   margin-right: 2px;
+}
+
+.mr-groups > .mr-group > .mr-grid {
+  align-content: center;
+  justify-content: center;
 }
 
 .mr-btn {
@@ -115,7 +125,7 @@
 .mr-template-svg {
   display: block;
   width: auto;
-  max-width: 28px;
+  max-width: 24px;
   max-height: 23px;
   flex: 0 0 auto;
 }
@@ -193,13 +203,19 @@
 }
 
 .mr-arrow-template-svg {
-  max-width: 29px;
+  width: 26px;
+  height: 24px;
+  max-width: 26px;
   max-height: 24px;
+  object-fit: contain;
 }
 
 .mr-script-arrow-template-svg {
+  width: 28px;
+  height: 28px;
   max-width: 28px;
   max-height: 28px;
+  object-fit: contain;
 }
 
 .mr-tab3-accent-group {
@@ -207,7 +223,7 @@
 }
 
 .mr-tab3-accent-group .mr-grid {
-  grid-auto-rows: 34px;
+  grid-auto-rows: 32px;
   align-content: center;
   justify-content: center;
   justify-items: center;
@@ -215,36 +231,36 @@
 }
 
 .mr-tab3-accent-group .mr-btn {
-  width: var(--mr-cell, 34px);
-  height: var(--mr-cell, 34px);
+  width: var(--mr-cell, 32px);
+  height: var(--mr-cell, 32px);
 }
 
 .mr-tab3-accent-group .mr-script-arrow-template-svg {
-  width: 28px;
-  height: 34px;
-  max-width: 28px;
-  max-height: 34px;
+  width: 26px;
+  height: 30px;
+  max-width: 26px;
+  max-height: 30px;
   object-fit: contain;
 }
 
 .mr-matrix-template-svg {
-  max-width: 28px;
-  max-height: 31px;
+  max-width: 24px;
+  max-height: 27px;
 }
 
 .mr-matrix-template-wide-svg {
-  max-width: 34px;
-  max-height: 22px;
+  max-width: 30px;
+  max-height: 20px;
 }
 
 .mr-cases-template-svg {
-  max-width: 30px;
-  max-height: 32px;
+  max-width: 24px;
+  max-height: 27px;
 }
 
 .mr-cases-template-wide-svg {
-  max-width: 36px;
-  max-height: 30px;
+  max-width: 30px;
+  max-height: 24px;
 }
 
 .mr-cases-group {
@@ -259,21 +275,21 @@
 }
 
 .mr-cases-group .mr-btn {
-  width: var(--mr-cell, 46px);
-  height: var(--mr-cell, 46px);
+  width: var(--mr-cell, 30px);
+  height: var(--mr-cell, 30px);
 }
 
 .mr-cases-group .mr-cases-template-svg {
-  width: 38px;
-  height: 38px;
-  max-width: 38px;
-  max-height: 38px;
+  width: 24px;
+  height: 27px;
+  max-width: 24px;
+  max-height: 27px;
   object-fit: contain;
 }
 
 .mr-cases-group .mr-cases-template-wide-svg {
-  width: 42px;
-  max-width: 42px;
+  width: 30px;
+  max-width: 30px;
 }
 
 .mr-sum-placeholder-icon {
@@ -428,18 +444,21 @@
 .mr-dropdown-script-arrows .mr-grid {
   align-items: center;
   justify-items: center;
+  gap: 2px;
 }
 
 .mr-dropdown-script-arrows .mr-btn {
-  width: var(--mr-cell, 34px);
-  height: var(--mr-cell, 34px);
+  width: var(--mr-cell, 32px);
+  height: var(--mr-cell, 32px);
+  min-width: 32px;
+  min-height: 32px;
 }
 
 .mr-dropdown-script-arrows .mr-script-arrow-template-svg {
-  width: 30px;
-  height: 30px;
-  max-width: 30px;
-  max-height: 30px;
+  width: 28px;
+  height: 28px;
+  max-width: 28px;
+  max-height: 28px;
   object-fit: contain;
 }
 .mr-grid-preview {
@@ -540,6 +559,100 @@
   grid-template-columns: repeat(var(--mr-cols, 1), 23px);
 }
 
+.mr-tab-matrices .mr-groups {
+  align-items: center;
+  padding: 6px 4px;
+  height: 96px;
+}
+
+.mr-tab-matrices .mr-group {
+  min-height: 84px;
+  align-items: center;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.mr-tab-matrices .mr-grid {
+  grid-template-columns: repeat(var(--mr-cols, 1), var(--mr-cell, 34px));
+  grid-auto-rows: var(--mr-cell, 34px);
+  gap: var(--mr-gap, 1px);
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.mr-tab5-matrix-group .mr-template-svg,
+.mr-tab5-cases-group .mr-template-svg,
+.mr-tab5-array-group .mr-template-svg {
+  object-fit: contain;
+}
+
+.mr-tab5-matrix-group .mr-matrix-template-svg {
+  width: 29px;
+  height: 32px;
+  max-width: 29px;
+  max-height: 32px;
+}
+
+.mr-tab5-matrix-group .mr-matrix-template-wide-svg {
+  width: 32px;
+  height: 22px;
+  max-width: 32px;
+  max-height: 22px;
+}
+
+.mr-tab5-cases-group .mr-cases-template-svg {
+  width: 30px;
+  height: 32px;
+  max-width: 30px;
+  max-height: 32px;
+}
+
+.mr-tab5-cases-group .mr-cases-template-wide-svg {
+  width: 34px;
+  max-width: 34px;
+}
+
+.mr-tab5-dots-group .mr-btn {
+  font-size: 18px;
+  font-family: "Times New Roman", serif;
+}
+
+.mr-tab5-dots-group {
+  align-items: center;
+}
+
+.mr-tab5-dots-group .mr-grid {
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.mr-tab5-dots-group .mr-btn {
+  width: var(--mr-cell, 32px);
+  height: var(--mr-cell, 32px);
+}
+
+.mr-tab5-array-group .mr-btn {
+  width: var(--mr-cell, 34px);
+  height: var(--mr-cell, 34px);
+}
+
+.mr-tab5-array-group .mr-template-svg {
+  width: 30px;
+  height: 32px;
+  max-width: 30px;
+  max-height: 32px;
+}
+
+.mr-tab5-array-group .mr-more-arrow {
+  width: 8px;
+  margin-left: 0;
+  margin-right: -2px;
+}
+
 .mr-tab-funcs .mr-groups {
   align-items: center;
   padding: 7px 3px 6px;
@@ -593,6 +706,27 @@
 
 .mr-funcs-spacing-group {
   align-items: center;
+}
+
+.mr-tab-rel .mr-funcs-scripts-group .mr-grid,
+.mr-tab-rel .mr-funcs-element-scripts-group .mr-grid,
+.mr-tab-rel .mr-funcs-braces-group .mr-grid,
+.mr-tab-rel .mr-funcs-operators-group .mr-grid {
+  grid-template-columns: repeat(var(--mr-cols, 1), var(--mr-cell, 23px));
+  grid-auto-rows: var(--mr-cell, 23px);
+  gap: var(--mr-gap, 0);
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.mr-tab-rel .mr-funcs-scripts-group .mr-btn,
+.mr-tab-rel .mr-funcs-element-scripts-group .mr-btn,
+.mr-tab-rel .mr-funcs-braces-group .mr-btn,
+.mr-tab-rel .mr-funcs-operators-group .mr-btn {
+  width: var(--mr-cell, 23px);
+  height: var(--mr-cell, 23px);
 }
 
 .mr-tab-funcs .mr-script-template-svg,
